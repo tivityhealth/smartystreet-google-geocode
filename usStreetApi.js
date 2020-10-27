@@ -1,12 +1,12 @@
 import { callGeocoder } from './googleGeocoder'
-const callUSStreetApi = (fullAddress) => {
+const callUSStreetApi = (streetData) => {
     /* Initialize the SDK. */
     const SmartyStreetsSDK = require("smartystreets-javascript-sdk");
     const SmartyStreetsCore = SmartyStreetsSDK.core;
     const Lookup = SmartyStreetsSDK.usStreet.Lookup;
 
     //Client side key
-    const websiteKey = "8945708976961762"; // Update this with your website key.
+    const websiteKey = streetData.webKey; // Update this with your website key.
     const credentials = new SmartyStreetsCore.SharedCredentials(websiteKey);
 
     //build new client
@@ -14,7 +14,7 @@ const callUSStreetApi = (fullAddress) => {
     const client = clientBuilder.buildUsStreetApiClient();
 
     // Create a new lookup with the input value.
-    const lookup = new Lookup(fullAddress);
+    const lookup = new Lookup(streetData.address);
     lookup.maxCandidates = 1;
     lookup.match = "strict";
 

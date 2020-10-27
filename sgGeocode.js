@@ -6,13 +6,14 @@ const sgGeocode = (options) => {
     let zipData = {
       city: options.city,
       state: options.state,
-      zipcode: options.zipcode
+      zipcode: options.zipcode,
+      webKey: options.webKey
     };
     return callZipApi(zipData)
         .then(({result}) => result)
   } else if (options.address) {
       //undefined
-      return callUSStreetApi(options.address)
+      return callUSStreetApi(options)
         .then(({result}) =>  result )
   }
 };

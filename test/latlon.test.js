@@ -2,15 +2,19 @@ import {sgGeocode} from '../sgGeocode';
 
 let obj1 = {
     address: '155 E Frye Rd Chandler AZ',
+    webKey: '8945708976961762'
 }
 let obj2 = {
     zipcode: '85225',
+    webKey: '8945708976961762'
 }
 let obj3 = {
     zipcode: '1234',
+    webKey: '8945708976961762'
 }
 let obj4 = {
     zipcode: 'abcd',
+    webKey: '8945708976961762'
 }
 
 test('test usStreetAPI', () => {

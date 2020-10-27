@@ -5,7 +5,7 @@ const callZipApi = (zipData) => {
   const Lookup = SmartyStreetsSDK.usZipcode.Lookup;
 
   //Client side key
-  const websiteKey = "8945708976961762"; // Update this with your website key.
+  const websiteKey = zipData.webKey; // Update this with your website key.
   const credentials = new SmartyStreetsCore.SharedCredentials(websiteKey);
 
   //build new client
