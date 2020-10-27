@@ -4,20 +4,20 @@ Get Lat Long from SmartyStreets and Google Geocoder
 
 # Installation
 
-`npm i latlon --save`
+`npm i sggeocode --save`
 
 Then...
 
 ```
-import { latlon } from 'latlon';
+import { sgGeocode } from 'sggeocode';
 
-latlon({
+sgGeocode({
     address: 'someAddress',
 });
 
 //OR
 
-latlon({
+sgGeocode({
     zipcode: 'XXXXX',
     city: 'Lorem',
     state: 'XY'

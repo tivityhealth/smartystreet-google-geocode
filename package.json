@@ -1,8 +1,8 @@
 {
-  "name": "latlon",
-  "version": "1.0.0",
+  "name": "sggeocode",
+  "version": "1.0.1",
   "description": "Get lat lon from Google and SmartyStreets",
-  "main": "latlon.js",
+  "main": "sgGeocode.js",
   "scripts": {
     "test": "jest"
   },
