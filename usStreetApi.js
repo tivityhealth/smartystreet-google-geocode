@@ -1,4 +1,4 @@
-import { callGeocoder } from './geocoder'
+import { callGeocoder } from './googleGeocoder'
 const callUSStreetApi = (fullAddress) => {
     /* Initialize the SDK. */
     const SmartyStreetsSDK = require("smartystreets-javascript-sdk");
