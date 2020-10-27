@@ -1,25 +1,28 @@
 {
-  "name": "latlontest",
+  "name": "latlon",
   "version": "1.0.0",
   "description": "Get lat lon from Google and SmartyStreets",
-  "main": "latlontest.js",
+  "main": "latlon.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vishalc10/latlontest.git"
+    "url": "git+https://github.com/tivityhealth/smartystreet-google-geocode.git"
   },
   "keywords": [
+    "google",
+    "smartystreets",
     "lat",
-    "lon"
+    "long",
+    "zipcode"
   ],
-  "author": "vishal",
+  "author": "Tivity",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vishalc10/latlontest/issues"
+    "url": "https://github.com/tivityhealth/smartystreet-google-geocode/issues"
   },
-  "homepage": "https://github.com/vishalc10/latlontest#readme",
+  "homepage": "https://github.com/tivityhealth/smartystreet-google-geocode#readme",
   "dependencies": {
     "smartystreets-javascript-sdk": "^1.6.0"
   }
