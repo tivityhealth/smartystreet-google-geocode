@@ -1,6 +1,6 @@
 {
   "name": "latlontest",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Get lat lon from Google and SmartyStreets",
   "main": "latlontest.js",
   "scripts": {
