@@ -1,0 +1,112 @@
+#map {
+  height: 100%;
+}
+
+#output {
+  display: block;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid rgb(186, 178, 178);
+  box-shadow: 0px 0px 12px #efefef;
+  background-color: #fff;
+  color: #666;
+  margin-top: 40rem;
+}
+
+#output > p {
+  color: #007bff;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete-input-container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.autocomplete-input {
+  text-align: center;
+}
+
+#my-input-autocomplete {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  font-size: 15px;
+  border-radius: 3px;
+  border: 0;
+  margin-top: 10px;
+  width: 290px;
+  height: 40px;
+  text-overflow: ellipsis;
+  padding: 0 1em;
+}
+
+#my-input-autocomplete:focus {
+  outline: none;
+}
+
+.autocomplete-results {
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  position: absolute;
+  display: none;
+  background-color: white;
+  width: 320px;
+  padding: 0;
+  list-style-type: none;
+  margin: 0 auto;
+  border: 1px solid #d2d2d2;
+  border-top: 0;
+  box-sizing: border-box;
+}
+
+.autocomplete-item {
+  padding: 5px 5px 5px 35px;
+  height: 26px;
+  line-height: 26px;
+  border-top: 1px solid #d9d9d9;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.autocomplete-icon {
+  display: block;
+  position: absolute;
+  top: 7px;
+  bottom: 0;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.autocomplete-icon.icon-localities {
+  background-image: url(https://images.woosmap.com/icons/locality.svg);
+}
+
+.autocomplete-item:hover .autocomplete-icon.icon-localities {
+  background-image: url(https://images.woosmap.com/icons/locality-selected.svg);
+}
+
+.autocomplete-item:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+.autocomplete-results::after {
+  content: "";
+  box-sizing: border-box;
+  text-align: right;
+  display: block;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 120px 14px;
+}

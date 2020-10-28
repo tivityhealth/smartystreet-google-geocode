@@ -1,4 +1,4 @@
-import { callZipApi } from "./zipAPI";
+import { callZipApi } from "./zipApi";
 import { callUSStreetApi } from "./usStreetAPI";
 
 const sgGeocode = (options) => {

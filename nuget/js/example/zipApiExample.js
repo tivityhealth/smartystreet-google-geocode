@@ -1,4 +1,4 @@
-import {sgGeocode} from '../sgGeocode';
+import {sgGeocode} from '../src/sgGeocode';
 
 //passing zipcode to get lat long
     //creating zipcode object

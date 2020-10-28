@@ -1,4 +1,4 @@
-import {sgGeocode} from '../js/sgGeocode';
+import {sgGeocode} from '../src/sgGeocode';
 
 let obj1 = {
     address: '155 E Frye Rd Chandler AZ',

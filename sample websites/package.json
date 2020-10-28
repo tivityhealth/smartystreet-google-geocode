@@ -1,0 +1,15 @@
+{
+  "name": "sample-websites",
+  "version": "1.0.0",
+  "description": "A cost saving implementation of using smartysteets and google geocoder together",
+  "main": "app.js",
+  "scripts": {
+    "serve": "npx serve -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tivity",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
+}
