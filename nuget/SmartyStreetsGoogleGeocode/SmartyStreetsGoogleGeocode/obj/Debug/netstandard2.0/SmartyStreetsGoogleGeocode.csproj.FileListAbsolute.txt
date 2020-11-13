@@ -1,0 +1,15 @@
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\bin\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.deps.json
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\bin\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.dll
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocodeNuget\netstandard2.0\SmartyStreetsGoogleGeocode.deps.json
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocodeNuget\netstandard2.0\SmartyStreetsGoogleGeocode.dll
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocodeNuget\netstandard2.0\SmartyStreetsGoogleGeocode.pdb
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.csprojAssemblyReference.cache
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.AssemblyInfoInputs.cache
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.AssemblyInfo.cs
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.dll
+C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.pdb
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.csprojAssemblyReference.cache
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.AssemblyInfoInputs.cache
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.AssemblyInfo.cs
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.pdb

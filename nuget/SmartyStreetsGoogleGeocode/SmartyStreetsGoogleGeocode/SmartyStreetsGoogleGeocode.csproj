@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\chilkav\source\repos\SmartyStreetsGoogleGeocodeNuget\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="smartystreets-dotnet-sdk" Version="8.6.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,159 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode.csproj": {}
+  },
+  "projects": {
+    "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj",
+        "projectName": "SmartyStreetsGoogleGeocode",
+        "projectPath": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj",
+        "packagesPath": "C:\\Users\\chilkav\\.nuget\\packages\\",
+        "outputPath": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\chilkav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\chilkav\\Downloads\\chromedriver_win32": {},
+          "C:\\Users\\chilkav\\source\\repos\\LocalNuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "smartystreets-dotnet-sdk": {
+              "target": "Package",
+              "version": "[8.6.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode.csproj",
+        "projectName": "XUnitTestSmartyStreetsGoogleGeocode",
+        "projectPath": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode.csproj",
+        "packagesPath": "C:\\Users\\chilkav\\.nuget\\packages\\",
+        "outputPath": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\XUnitTestSmartyStreetsGoogleGeocode\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\chilkav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\chilkav\\Downloads\\chromedriver_win32": {},
+          "C:\\Users\\chilkav\\source\\repos\\LocalNuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj": {
+                "projectPath": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
