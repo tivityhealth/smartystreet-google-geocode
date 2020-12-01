@@ -7,10 +7,10 @@ namespace SmartyStreetsGoogleGeocode
 {
     class UsStreetApi
     {
-		public static GeoPoint CallUsStreet(AddressObject options)
+		public static GeoPoint CallUsStreet(GeocodeInput options)
 		{
-			var authId = options.authId;
-			var authToken = options.authToken;
+			var authId = Runtime.SmartyStreetsAuthId;
+			var authToken = Runtime.SmartyStreetsAuthToken;
 
 			var client = new ClientBuilder(authId, authToken)
 				//.WithCustomBaseUrl("us-street.api.smartystreets.com")
@@ -34,9 +34,15 @@ namespace SmartyStreetsGoogleGeocode
 			}
 			catch (SmartyException ex)
 			{
-				throw ex;
+				Console.WriteLine(ex.Message);
+				return null;
 			}
 			catch (IOException ex)
+			{
+				Console.WriteLine(ex.Message);
+				return null;
+			}
+			catch (Exception ex)
 			{
 				throw ex;
 			}
@@ -45,8 +51,8 @@ namespace SmartyStreetsGoogleGeocode
 
 			if (candidates.Count == 0)
 			{
-				Console.WriteLine("SmartyStreets cannot lookup this address. Calling Google geocoder");
-				return GoogleGeocode.callGoogleGeocoder(options.address);
+				Console.WriteLine("SmartyStreets unable to lookup this address. Calling Google geocoder");
+				return null;
 			}
 
 			var firstCandidate = candidates[0];
