@@ -4,7 +4,8 @@
   "description": "Get lat lon from Google and SmartyStreets",
   "main": "sgGeocode.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,10 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "babel-jest": "^26.6.1",
-    "smartystreets-javascript-sdk": "^1.6.0"
+    "babel-loader": "^8.2.2",
+    "smartystreets-javascript-sdk": "^1.6.0",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0"
   },
   "devDependencies": {
     "jest": "^26.6.1"
