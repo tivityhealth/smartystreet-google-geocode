@@ -3,6 +3,9 @@
   "version": "1.1.0",
   "description": "Get lat lon from Google and SmartyStreets",
   "main": "sgGeocode.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "jest",
     "build": "webpack"
