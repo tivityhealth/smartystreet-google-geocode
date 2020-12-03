@@ -9,9 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Run Jest
-      uses: stefanoeb/jest-action@1.0.3
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: cd npm && npm ci
+      - run: npm i jest
+      - run: npm run test
   release:
     name: publish
     runs-on: ubuntu-latest
