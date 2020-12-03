@@ -14,9 +14,7 @@ jobs:
         with:
           node-version: 12
       - run: cd npm && npm ci
-      - run: npm init -y
-      - run: npm i jest
-      - run: npm run test
+      - run: jest
   release:
     name: publish
     runs-on: ubuntu-latest
