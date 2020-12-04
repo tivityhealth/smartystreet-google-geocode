@@ -1,5 +1,5 @@
-import { callZipApi } from "./zipApi";
-import { callUSStreetApi } from "./usStreetAPI";
+const {callZipApi} = require("./zipApi")
+const { callUSStreetApi } = require("./usStreetApi");
 
 const sgGeocode = (options) => {
   if (options.zipcode || (options.city && options.state)) {
