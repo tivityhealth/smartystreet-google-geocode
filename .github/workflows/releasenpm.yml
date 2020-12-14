@@ -1,9 +1,8 @@
-name: "dry-publish"
+name: "🚀 publish npm"
 
 on:
-  push:
-    branches:
-      - master
+  release:
+    types: [published]
 
 jobs:
   release:
@@ -21,7 +20,9 @@ jobs:
       - name: Install
         run: cd npm && npm ci
       - name: tests
-        run: cd npm && npm test
+        run: cd npm && npx jest
+      - name: update version
+        run: cd npm && npm version ${{ github.event.release.tag_name }}
       - name: publish
         run: cd npm && npm publish --dry-run
         env:

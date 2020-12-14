@@ -192,3 +192,10 @@ C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStr
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\obj\Debug\netcoreapp3.1\XUnitTestSmartyStreetsGoogleGeocode.csproj.CopyComplete
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\obj\Debug\netcoreapp3.1\XUnitTestSmartyStreetsGoogleGeocode.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\obj\Debug\netcoreapp3.1\XUnitTestSmartyStreetsGoogleGeocode.pdb
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
