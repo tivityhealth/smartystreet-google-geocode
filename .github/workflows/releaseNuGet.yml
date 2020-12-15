@@ -14,6 +14,8 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.301
+      - name: build js bundle
+        run: cd npm && npm run build
       - name: copy js bundle
         run: cd npm/build/ && cp sgGeocode_bundle ../../nuget/SmartyStreetsGoogleGeocode
       - name: Build solution
