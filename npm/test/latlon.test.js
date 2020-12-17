@@ -1,7 +1,7 @@
 import {sgGeocode} from '../src/sgGeocode';
 
 let obj1 = {
-    address: '155 E Frye Rd Chandler AZ',
+    fullAddress: '155 E Frye Rd Chandler AZ',
     webKey: '8945708976961762'
 }
 let obj2 = {
@@ -18,7 +18,7 @@ let obj4 = {
 }
 
 let obj5 = {
-    address: '155 E Frye Rd Chandler AZ',
+    fullAddress: '155 E Frye Rd Chandler AZ',
     webKey: '894570897696176'
 }
 

@@ -14,7 +14,7 @@ const callUSStreetApi = (streetData) => {
     const client = clientBuilder.buildUsStreetApiClient();
 
     // Create a new lookup with the input value.
-    const lookup = new Lookup(streetData.address);
+    const lookup = new Lookup(streetData.fullAddress);
     lookup.maxCandidates = 1;
     lookup.match = "strict";
 

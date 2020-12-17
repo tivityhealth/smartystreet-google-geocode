@@ -2,6 +2,9 @@ const {callZipApi} = require("./zipApi")
 const { callUSStreetApi } = require("./usStreetApi");
 
 const sgGeocode = (options) => {
+  if(isOptionsNUll(options)){
+    throw "Object not defined correctly"
+  }
   //When user passes either zipcode or city-state combo
   if (options.zipcode || (options.city && options.state)) {
     let zipData = {
@@ -13,8 +16,8 @@ const sgGeocode = (options) => {
     return callZipApi(zipData)
         .then(({result}) => result)
   }
-  //When the user passes complete/partial address
-  else if (options.address) {
+  //When the user passes complete/partial fullAddress
+  else if (options.fullAddress) {
       return callUSStreetApi(options)
         .then(({result}) =>  result )
   }
@@ -25,8 +28,13 @@ const sgGeocode = (options) => {
   }
 };
 
-const usePrediction = (options) => {
+const isOptionsNUll = (options) => {
+  if(!options) return true;
+  if(!options.fullAddress && !options.zipcode && !options.city && !options.state && !options.prediction) return true;
+  return false;
+}
 
+const usePrediction = (options) => {
   let zipKeyWords = ["postal_code", "locality"];
 
   //Check if autocomplete object is zipcode compatible  
@@ -53,7 +61,7 @@ const usePrediction = (options) => {
   //If no zipcode, then call SmartyStreets USStreet end point
   else {
     let streetData = {
-      address: options.prediction.description,
+      fullAddress: options.prediction.description,
       webKey: options.webKey
     }
 
