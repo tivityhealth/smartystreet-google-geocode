@@ -1,20 +1,22 @@
 import {sgGeocode} from '../src/sgGeocode';
 
+let SmartyStreetsKey = process.env.WEB_KEY
+
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
-    webKey: '8945708976961762'
+    webKey: SmartyStreetsKey
 }
 let obj2 = {
     zipcode: '85225',
-    webKey: '8945708976961762'
+    webKey: SmartyStreetsKey
 }
 let obj3 = {
     zipcode: '1234',
-    webKey: '8945708976961762'
+    webKey: SmartyStreetsKey
 }
 let obj4 = {
     zipcode: 'abcd',
-    webKey: '8945708976961762'
+    webKey: SmartyStreetsKey
 }
 
 let obj5 = {
@@ -51,7 +53,7 @@ let obj6 = {
         ],
         "types" : [ "postal_code", "geocode" ]
      },
-     webKey: '8945708976961762' 
+     webKey: SmartyStreetsKey 
 }
 
 let obj7 = {
@@ -73,7 +75,7 @@ let obj7 = {
         ],
         "types" : [ "locality", "political", "geocode" ]
      },
-     webKey: '8945708976961762' 
+     webKey: SmartyStreetsKey 
 }
 
 let obj8 = {
@@ -103,7 +105,7 @@ let obj8 = {
         ],
         "types" : [ "premise", "geocode" ]
      },
-     webKey: '8945708976961762' 
+     webKey: SmartyStreetsKey 
 }
 
 test('test usStreetAPI', () => {
