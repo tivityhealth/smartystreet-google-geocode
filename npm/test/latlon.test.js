@@ -1,22 +1,20 @@
 import {sgGeocode} from '../src/sgGeocode';
 
-let SmartyStreetsKey = process.env.WEB_KEY
-
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
-    webKey: SmartyStreetsKey
+    webKey: '${{secrets.NUGET_API_KEY}}'
 }
 let obj2 = {
     zipcode: '85225',
-    webKey: SmartyStreetsKey
+    webKey: '${{secrets.NUGET_API_KEY}}'
 }
 let obj3 = {
     zipcode: '1234',
-    webKey: SmartyStreetsKey
+    webKey: '${{secrets.NUGET_API_KEY}}'
 }
 let obj4 = {
     zipcode: 'abcd',
-    webKey: SmartyStreetsKey
+    webKey: '${{secrets.NUGET_API_KEY}}'
 }
 
 let obj5 = {
@@ -53,7 +51,7 @@ let obj6 = {
         ],
         "types" : [ "postal_code", "geocode" ]
      },
-     webKey: SmartyStreetsKey 
+     webKey: '${{secrets.NUGET_API_KEY}}'
 }
 
 let obj7 = {
@@ -75,7 +73,7 @@ let obj7 = {
         ],
         "types" : [ "locality", "political", "geocode" ]
      },
-     webKey: SmartyStreetsKey 
+     webKey: '${{secrets.NUGET_API_KEY}}'
 }
 
 let obj8 = {
@@ -105,7 +103,7 @@ let obj8 = {
         ],
         "types" : [ "premise", "geocode" ]
      },
-     webKey: SmartyStreetsKey 
+     webKey: `${{secrets.NUGET_API_KEY}}` 
 }
 
 test('test usStreetAPI', () => {
