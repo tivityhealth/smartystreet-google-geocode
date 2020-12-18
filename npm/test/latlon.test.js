@@ -103,7 +103,7 @@ let obj8 = {
         ],
         "types" : [ "premise", "geocode" ]
      },
-     webKey: `${{secrets.NUGET_API_KEY}}` 
+     webKey: '${{secrets.NUGET_API_KEY}}'
 }
 
 test('test usStreetAPI', () => {
