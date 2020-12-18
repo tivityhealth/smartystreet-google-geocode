@@ -22,3 +22,6 @@ jobs:
         run: cd npm && npm ci
       - name: tests
         run: cd npm && npx jest
+        env:
+          CI: true
+          WEB_KEY: ${{ secrets.WEB_KEY }}
