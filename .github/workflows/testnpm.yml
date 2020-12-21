@@ -3,7 +3,7 @@ name: "🚀 test npm"
 on:
   push:
     branches:
-      - main
+      - other
 
 jobs:
   release:
