@@ -24,6 +24,7 @@ jobs:
         env:
           CI: true
           WEB_KEY: ${{ secrets.WEB_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: update version
         run: cd npm && npm version ${{ github.event.release.tag_name }}
       - name: publish
