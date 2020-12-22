@@ -108,6 +108,11 @@ let obj8 = {
      webKey: SmartyStreetsKey 
 }
 
+let obj9 = {
+    fullAddress: '1448 S Spectrum Blvd Chandler AZ',
+    webKey: SmartyStreetsKey
+}
+
 test('test usStreetAPI', () => {
     return sgGeocode(obj1).then(res => {
         expect(res.lat).toBe(33.32371)
@@ -156,6 +161,13 @@ test('test Prediction CityState', () => {
 
 test('test Prediction usStreetAPI', () => {
     return sgGeocode(obj8).then(res => {
+        expect(res.lat).toBe(33.32371)
+        expect(res.lng).toBe(-111.83018)
+    })
+});
+
+test('test googleapi', () => {
+    return sgGeocode(obj9).then(res => {
         expect(res.lat).toBe(33.32371)
         expect(res.lng).toBe(-111.83018)
     })

@@ -1,11 +1,16 @@
+import {Client} from "@googlemaps/google-maps-services-js";
+
 const callGeocoder = (fullAddress) => {
 	console.log('In Geocoder')
-	var geocoder = new google.maps.Geocoder();
+	const client = new Client({});
+
+	const params = {
+		address: fullAddress,
+		key: process.env.GOOGLE_API_KEY
+	  };
 
 	return new Promise((resolve, reject) => {
-		geocoder.geocode({
-			'address': fullAddress
-		}, function (results, status) {
+		client.geocode({ params: params }, function (results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				var lat = results[0].geometry.location.lat();
 				var lng = results[0].geometry.location.lng();
