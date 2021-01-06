@@ -167,5 +167,5 @@ let obj9 = {
 // });
 
 test('test googleapi', () => {
-   return expect(sgGeocode(obj9)).resolves.toBe({result:{lat: 33.248528, lng: -111.8381307}})
+   return expect(sgGeocode(obj9)).resolves.toStrictEqual({result:{lat: 33.248528, lng: -111.8381307}})
 });
