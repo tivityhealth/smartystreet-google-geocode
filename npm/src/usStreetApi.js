@@ -32,8 +32,7 @@ const handleResponse = async (res) => {
     if(res.lookups[0].result == undefined || res.lookups[0].result.length == 0){
         //when smartystreets returns undefined         
         result = await callGeocoder(res.lookups[0].street)
-            .then(geo => geo);   
-           
+            .then(geo => geo);           
     }
     else{
         let lat = res.lookups[0].result[0].metadata.latitude;

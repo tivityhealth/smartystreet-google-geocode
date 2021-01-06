@@ -29,8 +29,6 @@ const handleResult = (res) => {
 		lng: res.data.results[0].geometry.location.lng
 	}
 
-	console.log(result);
-
 	return { result };
 }
 

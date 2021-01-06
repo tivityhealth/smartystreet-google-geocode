@@ -113,58 +113,58 @@ let obj9 = {
     webKey: SmartyStreetsKey
 }
 
-// test('test usStreetAPI', () => {
-//     return sgGeocode(obj1).then(res => {
-//         expect(res.lat).toBe(33.32371)
-//         expect(res.lng).toBe(-111.83018)
-//     })
-// });
+test('test usStreetAPI', () => {
+    return sgGeocode(obj1).then(res => {
+        expect(res.lat).toBe(33.32371)
+        expect(res.lng).toBe(-111.83018)
+    })
+});
 
-// test('test zipAPI', () => {
-//     return sgGeocode(obj2).then(res => {
-//         expect(res.lat).toBe(33.31666)
-//         expect(res.lng).toBe(-111.83182)
-//     })
-// });
+test('test zipAPI', () => {
+    return sgGeocode(obj2).then(res => {
+        expect(res.lat).toBe(33.31666)
+        expect(res.lng).toBe(-111.83182)
+    })
+});
 
-// test('test invalid zip code', () => {
-//     return sgGeocode(obj3).then(res => {
-//         expect(res.error).toBe("Invalid ZIP Code.")
-//     })
-// });
+test('test invalid zip code', () => {
+    return sgGeocode(obj3).then(res => {
+        expect(res.error).toBe("Invalid ZIP Code.")
+    })
+});
 
-// test('test non numeric zip code', () => {
-//     return sgGeocode(obj4).then(res => {
-//         expect(res.error).toBe("Blank lookup (you must provide a ZIP Code and/or City/State combination).")
-//     })
-// });
+test('test non numeric zip code', () => {
+    return sgGeocode(obj4).then(res => {
+        expect(res.error).toBe("Blank lookup (you must provide a ZIP Code and/or City/State combination).")
+    })
+});
 
-// test('test invalid key', () => {
-//     return sgGeocode(obj5).then(res => {
-//         expect(res.error).toBe("Unauthorized: The credentials were provided incorrectly or did not match any existing active credentials.")
-//     })
-// });
+test('test invalid key', () => {
+    return sgGeocode(obj5).then(res => {
+        expect(res.error).toBe("Unauthorized: The credentials were provided incorrectly or did not match any existing active credentials.")
+    })
+});
 
-// test('test Prediction Zipcode', () => {
-//     return sgGeocode(obj6).then(res => {
-//         expect(res.lat).toBe(33.31666)
-//         expect(res.lng).toBe(-111.83182)
-//     })
-// });
+test('test Prediction Zipcode', () => {
+    return sgGeocode(obj6).then(res => {
+        expect(res.lat).toBe(33.31666)
+        expect(res.lng).toBe(-111.83182)
+    })
+});
 
-// test('test Prediction CityState', () => {
-//     return sgGeocode(obj7).then(res => {
-//         expect(res.lat).toBe(33.43681)
-//         expect(res.lng).toBe(-111.943)
-//     })
-// });
+test('test Prediction CityState', () => {
+    return sgGeocode(obj7).then(res => {
+        expect(res.lat).toBe(33.43681)
+        expect(res.lng).toBe(-111.943)
+    })
+});
 
-// test('test Prediction usStreetAPI', () => {
-//     return sgGeocode(obj8).then(res => {
-//         expect(res.lat).toBe(33.32371)
-//         expect(res.lng).toBe(-111.83018)
-//     })
-// });
+test('test Prediction usStreetAPI', () => {
+    return sgGeocode(obj8).then(res => {
+        expect(res.lat).toBe(33.32371)
+        expect(res.lng).toBe(-111.83018)
+    })
+});
 
 test('test googleapi', () => {
    return expect(sgGeocode(obj9)).resolves.toStrictEqual({result:{lat: 33.248528, lng: -111.8381307}})
