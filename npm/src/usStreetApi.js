@@ -26,13 +26,14 @@ const callUSStreetApi = (streetData) => {
     });
 };
 
-const handleResponse = (res) => {
+const handleResponse = async (res) => {
     console.log('In Street Handle response');
     let result;
     if(res.lookups[0].result == undefined || res.lookups[0].result.length == 0){
-        //returning undefined
-        result = callGeocoder(res.lookups[0].street)
-            .then(geo => geo);        
+        //when smartystreets returns undefined         
+        result = await callGeocoder(res.lookups[0].street)
+            .then(geo => geo);   
+           
     }
     else{
         let lat = res.lookups[0].result[0].metadata.latitude;
