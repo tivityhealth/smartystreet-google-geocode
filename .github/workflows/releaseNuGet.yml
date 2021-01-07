@@ -38,15 +38,15 @@ jobs:
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
           dotnet build --configuration release
-      - name: Test
-        run: |
-          cd nuget/SmartyStreetsGoogleGeocode
-          dotnet test
-      - name: Create NuGet package
-        run: |
-          cd nuget/SmartyStreetsGoogleGeocode
-          dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }}
-      - name: Push with dotnet
-        run: |
-          cd nuget/SmartyStreetsGoogleGeocode
-          dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      #- name: Test
+      #  run: |
+      #    cd nuget/SmartyStreetsGoogleGeocode
+      #    dotnet test
+      #- name: Create NuGet package
+      #  run: |
+      #    cd nuget/SmartyStreetsGoogleGeocode
+      #    dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }}
+      #- name: Push with dotnet
+      #  run: |
+      #    cd nuget/SmartyStreetsGoogleGeocode
+      #    dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
