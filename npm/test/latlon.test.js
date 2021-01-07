@@ -1,6 +1,6 @@
 import {sgGeocode} from '../src/sgGeocode';
 
-let SmartyStreetsKey = "8945710817246932"
+let SmartyStreetsKey = process.env.WEB_KEY
 
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
@@ -21,7 +21,7 @@ let obj4 = {
 
 let obj5 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
-    webKey: '894570897696176'
+    webKey: '1234567890'
 }
 
 let obj6 = {

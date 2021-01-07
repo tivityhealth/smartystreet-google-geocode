@@ -9,7 +9,7 @@ const callGeocoder = (fullAddress) => {
 		.geocode({
 			params: {
 				address: fullAddress,
-				key: "AIzaSyBSRqp7SYs59T_ZaWKg-luk4rCVoExhG5g",
+				key: process.env.GOOGLE_API_KEY,
 			},
 			timeout: 1000, // milliseconds
 		})
