@@ -22,7 +22,7 @@ jobs:
       - name: build js bundle
         run: cd npm && npm run build
       - name: copy js bundle
-        run: cd npm/build/ && cp sgGeocode_bundle ../../nuget/SmartyStreetsGoogleGeocode
+        run: cd npm/build/ && cp sgGeocode_bundle.js ../../nuget/SmartyStreetsGoogleGeocode
 
   release:
     name: test and publish
