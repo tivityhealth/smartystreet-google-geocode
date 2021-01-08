@@ -28,6 +28,6 @@ jobs:
       - name: update version
         run: cd npm && npm version ${{ github.event.release.tag_name }}
       - name: publish
-        run: cd npm && npm publish --dry-run
+        run: cd npm && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
