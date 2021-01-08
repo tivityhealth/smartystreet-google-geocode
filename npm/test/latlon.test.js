@@ -1,6 +1,7 @@
 import {sgGeocode} from '../src/sgGeocode';
 
 let SmartyStreetsKey = process.env.WEB_KEY
+let GoogleApiKey = process.env.GOOGLE_API_KEY
 
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
@@ -110,7 +111,8 @@ let obj8 = {
 
 let obj9 = {
     fullAddress: 'LA Fitness, S Arizona Avenue, Chandler AZ',
-    webKey: SmartyStreetsKey
+    webKey: SmartyStreetsKey,
+    gApiKey: GoogleApiKey,
 }
 
 test('test usStreetAPI', () => {

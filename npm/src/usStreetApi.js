@@ -20,18 +20,18 @@ const callUSStreetApi = (streetData) => {
 
     // Send the lookup with the SDK. The SDK returns a promise.
     return client.send(lookup).then((res) => {
-        return handleResponse(res)
+        return handleResponse(res, streetData.gApiKey)
     }).catch((res) => {
         return handleError(res);
     });
 };
 
-const handleResponse = async (res) => {
+const handleResponse = async (res, gApiKey) => {
     console.log('In Street Handle response');
     let result;
     if(res.lookups[0].result == undefined || res.lookups[0].result.length == 0){
         //when smartystreets returns undefined         
-        result = await callGeocoder(res.lookups[0].street)
+        result = await callGeocoder(res.lookups[0].street, gApiKey)
             .then(geo => geo);           
     }
     else{

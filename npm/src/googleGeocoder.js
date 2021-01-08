@@ -1,6 +1,6 @@
 import { Client } from "@googlemaps/google-maps-services-js"
 
-const callGeocoder = (fullAddress) => {
+const callGeocoder = (fullAddress, apiKey) => {
 	console.log('In Geocoder')
 	const client = new Client({});
 	let result;
@@ -9,7 +9,7 @@ const callGeocoder = (fullAddress) => {
 		.geocode({
 			params: {
 				address: fullAddress,
-				key: process.env.GOOGLE_API_KEY,
+				key: apiKey,
 			},
 			timeout: 1000, // milliseconds
 		})

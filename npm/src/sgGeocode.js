@@ -62,7 +62,8 @@ const usePrediction = (options) => {
   else {
     let streetData = {
       fullAddress: options.prediction.description,
-      webKey: options.webKey
+      webKey: options.webKey,
+      gApiKey: options.gApiKey,
     }
 
     return callUSStreetApi(streetData)
