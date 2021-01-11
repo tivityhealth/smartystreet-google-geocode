@@ -13,8 +13,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithZipCodeReturnsResult()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string zip = "85225";            
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
@@ -26,8 +26,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestUsStreetApiReturnsResult()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string address = "155 E Frye Rd Chandler AZ";
             GeocodeInput dObj = new GeocodeInput(address);
 
@@ -39,9 +39,9 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestGoogleGeocodeReturnsResult()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
-            //Environment.SetEnvironmentVariable("Google_Api_Key", "AIzaSyBSRqp7SYs59T_ZaWKg-luk4rCVoExhG5g");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("Google_Api_Key", "AIzaSyBSRqp7SYs59T_ZaWKg-luk4rCVoExhG5g");
             string add = "LA Fitness, Arizona Ave Chandler AZ";
             GeocodeInput dObj = new GeocodeInput(add);
 
@@ -53,8 +53,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestInvalidZipCodeThrowsException()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string zip = "abcde";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
@@ -66,8 +66,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestInvalidKeyThrowsException()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "1234567890");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "1234567890");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "1234567890");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "1234567890");
             string zip = "85225";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
@@ -79,8 +79,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithCityStateReturnsResult()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string city = "Chandler";
             string state = "AZ";
             GeocodeInput dObj = new GeocodeInput(null, city, state);
@@ -93,8 +93,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithStateOnlyThrowsException()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string state = "AZ";
             GeocodeInput dObj = new GeocodeInput(null, null, state);
 
@@ -106,8 +106,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithCityOnlyThrowsException()
         {
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
-            //Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string city = "Chandler";
             GeocodeInput dObj = new GeocodeInput(null, city, null);
 
