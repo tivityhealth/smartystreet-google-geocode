@@ -20,7 +20,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
-            Assert.Equal("(33.31666°N,-111.83182°E)", gp.ToString());
+            Assert.Equal("(33.31666"+ "\u00B0" + "N,-111.83182" + "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
-            Assert.Equal("(33.32371°N,-111.83018°E)", gp.ToString());
+            Assert.Equal("(33.32371"+ "\u00B0" + "N,-111.83018"+ "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
-            Assert.Equal("(33.248528°N,-111.8381307°E)", gp.ToString());
+            Assert.Equal("(33.248528"+ "\u00B0" + "N,-111.8381307"+ "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -87,7 +87,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
-            Assert.Equal("(33.32212°N,-111.87374°E)", gp.ToString());
+            Assert.Equal("(33.32212"+ "\u00B0" + "N,-111.87374"+ "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
