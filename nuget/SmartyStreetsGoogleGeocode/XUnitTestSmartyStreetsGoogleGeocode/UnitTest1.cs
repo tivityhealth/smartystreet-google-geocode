@@ -1,6 +1,8 @@
+using Newtonsoft.Json;
 using SmartyStreets;
 using SmartyStreetsGoogleGeocode;
 using System;
+using System.IO;
 using System.Net;
 using Xunit;
 
@@ -8,14 +10,13 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 {
     public class UnitTest1
     {
-        //Name tests
-        const string auth_id = "a4e58b8c-6a2c-de84-3c6e-4e7b130f7134";
-        const string auth_token = "LdPmUE3hz0MNZBMgAJIV";
         [Fact]
         public void TestZipApiWithZipCodeReturnsResult()
         {
-            string zip = "85225";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, zip, null, null);
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            string zip = "85225";            
+            GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
@@ -25,8 +26,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestUsStreetApiReturnsResult()
         {
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string address = "155 E Frye Rd Chandler AZ";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, address);
+            GeocodeInput dObj = new GeocodeInput(address);
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
@@ -36,8 +39,11 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestGoogleGeocodeReturnsResult()
         {
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
+            Environment.SetEnvironmentVariable("Google_Api_Key", "AIzaSyBSRqp7SYs59T_ZaWKg-luk4rCVoExhG5g");
             string add = "LA Fitness, Arizona Ave Chandler AZ";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, add);
+            GeocodeInput dObj = new GeocodeInput(add);
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
@@ -47,9 +53,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestInvalidZipCodeThrowsException()
         {
-            //Should call google or throw exception
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string zip = "abcde";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, zip, null, null);
+            GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
             Exception ex = Assert.Throws<ApplicationException>(() => SgGeocoder.CallSgGeocoder(dObj));
 
@@ -59,9 +66,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestInvalidKeyThrowsException()
         {
-            string invalid_auth_id = "abcdef12345";
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "1234567890");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "1234567890");
             string zip = "85225";
-            GeocodeInput dObj = new GeocodeInput(invalid_auth_id, auth_token, zip, null, null);
+            GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
             Exception ex = Assert.Throws<BadCredentialsException>(() => SgGeocoder.CallSgGeocoder(dObj));
 
@@ -71,9 +79,11 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithCityStateReturnsResult()
         {
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string city = "Chandler";
             string state = "AZ";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, null, city, state);
+            GeocodeInput dObj = new GeocodeInput(null, city, state);
 
             GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
 
@@ -83,8 +93,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithStateOnlyThrowsException()
         {
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string state = "AZ";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, null, null, state);
+            GeocodeInput dObj = new GeocodeInput(null, null, state);
 
             Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
 
@@ -94,8 +106,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithCityOnlyThrowsException()
         {
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "2cb03503-1013-8166-b47c-c39b14fb6d02");
+            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "URQd638OGdMeAhhfkHh1");
             string city = "Chandler";
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, null, city, null);
+            GeocodeInput dObj = new GeocodeInput(null, city, null);
 
             Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
 
@@ -105,7 +119,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestNullArguments()
         {
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, null, null, null);
+            GeocodeInput dObj = new GeocodeInput(null, null, null);
 
             Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
 
@@ -115,7 +129,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestEmptyArguments()
         {
-            GeocodeInput dObj = new GeocodeInput(auth_id, auth_token, "");
+            GeocodeInput dObj = new GeocodeInput("");
 
             Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
 

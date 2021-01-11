@@ -42,11 +42,6 @@ namespace SmartyStreetsGoogleGeocode
             }
 
             return result;
-
-           // Address, Zip, City, State
-           // null, null, null, AZ
-
-            //if only city or state, throw exceptipon
         }
     }
 }

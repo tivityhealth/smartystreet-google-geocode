@@ -1,28 +1,29 @@
 name: "🚀 publish nuget"
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - other
 
 jobs:
-  build:
-    name: build and copy npm
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org
-      - name: Install
-        run: cd npm && npm ci
-      - name: build js bundle
-        run: cd npm && npm run build
-      - name: copy js bundle
-        run: cd npm/build/ && cp sgGeocode_bundle.js ../../nuget/SmartyStreetsGoogleGeocode
+  #build:
+  #  name: build and copy npm
+  #  runs-on: ubuntu-latest
+  #
+  #  steps:
+  #    - name: checkout
+  #      uses: actions/checkout@v2
+  #    - name: node
+  #      uses: actions/setup-node@v1
+  #      with:
+  #        node-version: 12
+  #        registry-url: https://registry.npmjs.org
+  #    - name: Install
+  #      run: cd npm && npm ci
+  #    - name: build js bundle
+  #      run: cd npm && npm run build
+  #    - name: copy js bundle
+  #      run: cd npm/build/ && cp sgGeocode_bundle.js ../../nuget/SmartyStreetsGoogleGeocode
 
   release:
     name: test and publish
@@ -38,10 +39,14 @@ jobs:
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
           dotnet build --configuration release
-      #- name: Test
-      #  run: |
-      #    cd nuget/SmartyStreetsGoogleGeocode
-      #    dotnet test
+      - name: Test
+        run: |
+          cd nuget/SmartyStreetsGoogleGeocode
+          dotnet test
+        env:
+          SMARTYSTREETS_AUTHID: ${{secrets.SMARTYSTREETS_AUTHID}}
+          SMARTYSTREETS_AUTHTOKEN: ${{secrets.SMARTYSTREETS_AUTHTOKEN}}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       #- name: Create NuGet package
       #  run: |
       #    cd nuget/SmartyStreetsGoogleGeocode
