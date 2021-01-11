@@ -8,7 +8,7 @@ namespace SmartyStreetsGoogleGeocode
 {
     public static class CoreApiBuilderExtensions
     {
-        public static IApplicationBuilder UseTivityGeocoderService(this IApplicationBuilder app, IHostingEnvironment env)
+        public static IApplicationBuilder UseTivityGeocoderService(this IApplicationBuilder app)
         {
             Validations.Required("SmartyStreets_AuthId", Runtime.SmartyStreetsAuthId);
             Validations.Required("SmartyStreets_AuthToken", Runtime.SmartyStreetsAuthToken);
