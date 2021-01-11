@@ -3,7 +3,7 @@ name: "🚀 publish nuget"
 on:
   push:
     branches:
-      - other
+      - main
 
 jobs:
   #build:
