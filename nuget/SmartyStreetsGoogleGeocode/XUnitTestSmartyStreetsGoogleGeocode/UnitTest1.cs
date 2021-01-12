@@ -14,7 +14,6 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         public void TestZipApiWithZipCodeReturnsResult()
         {
             //LaunchSettingsFixture.SetEnvVariable();
-            Console.WriteLine("123XYZ", Environment.GetEnvironmentVariable("SMARTYSTREETS_AUTHTOKEN"));
             string zip = "85225";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
@@ -22,11 +21,11 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
             Assert.Equal("(33.31666"+ "\u00B0" + "N,-111.83182" + "\u00B0" + "E)", gp.ToString());
         }
-        /**
+
         [Fact]
         public void TestUsStreetApiReturnsResult()
         {
-            LaunchSettingsFixture.SetEnvVariable();
+            //LaunchSettingsFixture.SetEnvVariable();
             string address = "155 E Frye Rd Chandler AZ";
             GeocodeInput dObj = new GeocodeInput(address);
 
@@ -38,7 +37,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestGoogleGeocodeReturnsResult()
         {
-            LaunchSettingsFixture.SetEnvVariable();
+            //LaunchSettingsFixture.SetEnvVariable();
             string add = "LA Fitness, Arizona Ave Chandler AZ";
             GeocodeInput dObj = new GeocodeInput(add);
 
@@ -50,7 +49,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestInvalidZipCodeThrowsException()
         {
-            LaunchSettingsFixture.SetEnvVariable();
+            //LaunchSettingsFixture.SetEnvVariable();
             string zip = "abcde";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
@@ -75,7 +74,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithCityStateReturnsResult()
         {
-            LaunchSettingsFixture.SetEnvVariable();
+            //LaunchSettingsFixture.SetEnvVariable();
             string city = "Chandler";
             string state = "AZ";
             GeocodeInput dObj = new GeocodeInput(null, city, state);
@@ -88,7 +87,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithStateOnlyThrowsException()
         {
-            LaunchSettingsFixture.SetEnvVariable();
+            //LaunchSettingsFixture.SetEnvVariable();
             string state = "AZ";
             GeocodeInput dObj = new GeocodeInput(null, null, state);
 
@@ -100,7 +99,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithCityOnlyThrowsException()
         {
-            LaunchSettingsFixture.SetEnvVariable();
+            //LaunchSettingsFixture.SetEnvVariable();
             string city = "Chandler";
             GeocodeInput dObj = new GeocodeInput(null, city, null);
 
@@ -128,7 +127,5 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
             Assert.Equal("Arguments cannot be null or empty (Parameter 'GeocodeInput')", ex.Message);
         }
-
-        */
     }
 }
