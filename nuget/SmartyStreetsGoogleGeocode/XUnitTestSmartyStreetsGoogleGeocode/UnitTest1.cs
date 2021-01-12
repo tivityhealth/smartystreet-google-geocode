@@ -13,8 +13,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         [Fact]
         public void TestZipApiWithZipCodeReturnsResult()
         {
-            Environment.SetEnvironmentVariable("SmartyStreets_AuthId", process.env.SMARTYSTREETS_AUTHID);
-            Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", process.env.SMARTYSTREETS_AUTHTOKEN);
+            LaunchSettingsFixture.SetEnvVariable();
+            Console.WriteLine(Environment.GetEnvironmentVariable("SMARTYSTREETS_AUTHTOKEN"));
             string zip = "85225";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
 
