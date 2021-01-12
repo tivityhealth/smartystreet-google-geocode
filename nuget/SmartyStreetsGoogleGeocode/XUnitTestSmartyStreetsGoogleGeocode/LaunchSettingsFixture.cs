@@ -19,7 +19,6 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
 
                 var variables = jObject
                     .GetValue("profiles")
-                    //select a proper profile here
                     .SelectMany(profiles => profiles.Children())
                     .SelectMany(profile => profile.Children<JProperty>())
                     .Where(prop => prop.Name == "environmentVariables")
