@@ -41,11 +41,15 @@ jobs:
           dotnet build --configuration release
       - name: Test
         run: |
+          cd nuget/SmartyStreetsGoogleGeocode
           echo "SmartyStreets_AuthId=${{secrets.SMARTYSTREETS_AUTHID}}" >> $GITHUB_ENV
           echo "SmartyStreets_AuthToken=${{secrets.SMARTYSTREETS_AUTHTOKEN}}" >> $GITHUB_ENV
           echo "Google_Api_Key=${{secrets.GOOGLE_API_KEY}}" >> $GITHUB_ENV
-          cd nuget/SmartyStreetsGoogleGeocode
           dotnet test
+        env:
+          SMARTYSTREETS_AUTHID: ${{secrets.SMARTYSTREETS_AUTHID}}
+          SMARTYSTREETS_AUTHTOKEN: ${{secrets.SMARTYSTREETS_AUTHTOKEN}}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       #- name: Create NuGet package
       #  run: |
       #    cd nuget/SmartyStreetsGoogleGeocode
