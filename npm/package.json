@@ -4,7 +4,8 @@
   "description": "Get lat lon from Google and SmartyStreets",
   "main": "sgGeocode.js",
   "files": [
-    "src"
+    "src",
+    "build"
   ],
   "scripts": {
     "test": "jest",
