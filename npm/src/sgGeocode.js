@@ -1,4 +1,4 @@
-const {callZipApi} = require("./zipApi")
+const {callZipApi} = require("./zipApi");
 const { callUSStreetApi } = require("./usStreetApi");
 
 const sgGeocode = (options) => {

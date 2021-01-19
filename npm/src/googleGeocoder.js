@@ -1,4 +1,4 @@
-import { Client } from "@googlemaps/google-maps-services-js"
+const { Client } = require("@googlemaps/google-maps-services-js");
 
 const callGeocoder = (fullAddress, apiKey) => {
 	console.log('In Geocoder')

@@ -1,6 +1,6 @@
 {
   "name": "sggeocode",
-  "version": "1.1.4",
+  "version": "0.0.14",
   "description": "Get lat lon from Google and SmartyStreets",
   "main": "src/sgGeocode.js",
   "files": [
@@ -29,17 +29,16 @@
   },
   "homepage": "https://github.com/tivityhealth/smartystreet-google-geocode#readme",
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.1.13",
+    "smartystreets-javascript-sdk": "^1.6.0",
   },
   "devDependencies": {
     "jest": "^26.6.1",    
     "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@googlemaps/google-maps-services-js": "^3.1.13",
-    "axios": "^0.21.1",
+    "@babel/preset-env": "^7.12.1",    
     "babel-jest": "^26.6.1",
     "babel-loader": "^8.2.2",
-    "node-notifier": "^9.0.0",
-    "smartystreets-javascript-sdk": "^1.6.0",
+    "node-notifier": "^9.0.0",    
     "webpack": "^5.9.0",
     "webpack-cli": "^4.2.0"
   }
