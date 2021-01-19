@@ -22,14 +22,14 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: Install
         run: cd npm && npm ci
-      - name: tests
-        run: cd npm && npx jest
-      - name: Build buyndle
+      #- name: tests
+      #  run: cd npm && npx jest
+      #  env:
+      #    CI: true
+      #    WEB_KEY: ${{ secrets.WEB_KEY }}
+      #    GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      - name: Build bundle
         run: cd npm && npm run build
-        env:
-          CI: true
-          WEB_KEY: ${{ secrets.WEB_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       - name: update version
         run: cd npm && npm version ${{ github.event.release.tag_name }}
       - name: publish
