@@ -1,8 +1,11 @@
 name: "🚀 publish npm"
 
 on:
-  release:
-    types: [published]
+  #release:
+  #  types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
   release:

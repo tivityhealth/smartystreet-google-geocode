@@ -28,6 +28,9 @@
   },
   "homepage": "https://github.com/tivityhealth/smartystreet-google-geocode#readme",
   "dependencies": {
+  },
+  "devDependencies": {
+    "jest": "^26.6.1",    
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@googlemaps/google-maps-services-js": "^3.1.13",
@@ -38,8 +41,5 @@
     "smartystreets-javascript-sdk": "^1.6.0",
     "webpack": "^5.9.0",
     "webpack-cli": "^4.2.0"
-  },
-  "devDependencies": {
-    "jest": "^26.6.1"
   }
 }

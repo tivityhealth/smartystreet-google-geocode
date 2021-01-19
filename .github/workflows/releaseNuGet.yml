@@ -3,7 +3,7 @@ name: "🚀 publish nuget"
 on:
   push:
     branches:
-      - main
+      - other
 
 jobs:
   #build:
@@ -50,11 +50,11 @@ jobs:
           SMARTYSTREETS_AUTHID: ${{secrets.SMARTYSTREETS_AUTHID}}
           SMARTYSTREETS_AUTHTOKEN: ${{secrets.SMARTYSTREETS_AUTHTOKEN}}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      #- name: Create NuGet package
-      #  run: |
-      #    cd nuget/SmartyStreetsGoogleGeocode
-      #    dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }}
-      #- name: Push with dotnet
-      #  run: |
-      #    cd nuget/SmartyStreetsGoogleGeocode
-      #    dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      - name: Create NuGet package
+        run: |
+          cd nuget/SmartyStreetsGoogleGeocode
+          dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }}
+      - name: Push with dotnet
+        run: |
+          cd nuget/SmartyStreetsGoogleGeocode
+          dotnet nuget push **/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
