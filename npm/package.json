@@ -1,6 +1,6 @@
 {
   "name": "sggeocode",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Get lat lon from Google and SmartyStreets",
   "main": "src/sgGeocode.js",
   "files": [

@@ -8,6 +8,7 @@ const callUSStreetApi = (streetData) => {
     //Client side key
     const websiteKey = streetData.webKey; // Update this with your website key.
     const credentials = new SmartyStreetsCore.SharedCredentials(websiteKey);
+    console.log(123, credentials.hostName)
 
     //build new client
     const clientBuilder = new SmartyStreetsCore.ClientBuilder(credentials);
