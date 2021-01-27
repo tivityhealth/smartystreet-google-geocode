@@ -37,4 +37,4 @@ const handleError = (e) => {
 	return { result };
 }
 
-module.exports.callGeocoder = callGeocoder;
+exports.callGeocoder = callGeocoder;

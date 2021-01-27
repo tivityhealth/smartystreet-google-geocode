@@ -4,9 +4,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src/sgGeocode.js"),
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "sgGeocode_bundle.js",
-    libraryTarget: 'var',
-    library: 'sgGeocode'
+    filename: "sgGeocode_bundle.js"
   },
   module: {
     rules: [

@@ -54,4 +54,4 @@ const handleError = (res) => {
     return {result};
   }
 
-module.exports.callUSStreetApi = callUSStreetApi;
+  exports.callUSStreetApi = callUSStreetApi;

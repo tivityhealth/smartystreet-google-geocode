@@ -50,4 +50,4 @@ const handleError = (res) => {
   return {result};
 }
 
-module.exports.callZipApi = callZipApi;
+exports.callZipApi = callZipApi;

@@ -70,4 +70,4 @@ const usePrediction = (options) => {
   }
 }
 
-module.exports.sgGeocode = sgGeocode;
+exports.sgGeocode = sgGeocode;
