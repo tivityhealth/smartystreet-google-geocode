@@ -12,7 +12,7 @@ Then to use it
 const {sgGeocode} = require('sgGeocode');
 
 sgGeocode({
-    fullAddress: '155 E Frye Rd Chandler AZ',
+    fullAddress: '123 E Chandler Blvd Chnadler AZ',
     webKey: '1234567890'
     }).then((res) => {
         console.log(res)
@@ -34,3 +34,72 @@ sgGeocode({
 - _zipcode_ - _5 digit zip code_
 - _city_ - _City name_
 - _state_ - _State code_
+
+You can pass in 3 types of objects
+1. Address Object (fullAddress)
+```
+{
+    fullAddress: '123 W Chandler Blvd Chandler AZ',
+    webKey: '1234567890'
+}
+```
+
+2. Zip object ('zipcode', or combination of 'city' and 'state', or all three of them)
+```
+{
+    zipcode: '12345',
+    webKey: '1234567890'
+}
+
+//OR a combination of City-State
+
+{
+    city: 'Chandler',
+    state: 'AZ'
+    webKey: '1234567890'
+}
+
+//OR all three of them
+{
+    zipcode: '12345'
+    city: 'Chandler',
+    state: 'AZ'
+    webKey: '1234567890'
+}
+```
+
+3. Google autocomplete object ('prediction'), which looks like this
+```
+{
+    //name the autocomplete object as 'prediction'
+    prediction: {
+        "description" : "Chandler, AZ 85225, USA",
+        "matched_substrings" : [
+           {
+              "length" : 5,
+              "offset" : 13
+           }
+        ],
+        "terms" : [
+           {
+              "offset" : 0,
+              "value" : "Chandler"
+           },
+           {
+              "offset" : 10,
+              "value" : "AZ"
+           },
+           {
+              "offset" : 13,
+              "value" : "85225"
+           },
+           {
+              "offset" : 20,
+              "value" : "USA"
+           }
+        ],
+        "types" : [ "postal_code", "geocode" ]
+     },
+     webKey: SmartyStreetsKey 
+}
+```
