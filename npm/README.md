@@ -4,29 +4,33 @@ Get Lat Long from SmartyStreets and Google Geocoder
 
 # Installation
 
-`npm i sggeocode --save`
+`npm install sggeocode --save`
 
-Then...
+Then to use it
 
 ```
-import { sgGeocode } from 'sggeocode';
+const {sgGeocode} = require('sgGeocode');
 
 sgGeocode({
-    address: 'someAddress',
+    fullAddress: '155 E Frye Rd Chandler AZ',
+    webKey: '1234567890'
+    }).then((res) => {
+        console.log(res)
 });
 
 //OR
 
 sgGeocode({
-    zipcode: 'XXXXX',
-    city: 'Lorem',
-    state: 'XY'
+    zipcode: '12345',
+    webKey: '1234567890'
+    }).then((res) => {
+        console.log(res)
 });
 ```
 
 ## Options
 
-- _address_ - _Complete Address_
+- _fullAddress_ - _Complete Address_
 - _zipcode_ - _5 digit zip code_
 - _city_ - _City name_
 - _state_ - _State code_
