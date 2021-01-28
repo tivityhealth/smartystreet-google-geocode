@@ -11,20 +11,8 @@ Then to use it
 ```
 const {sgGeocode} = require('sgGeocode');
 
-sgGeocode({
-    fullAddress: '123 E Chandler Blvd Chnadler AZ',
-    webKey: '1234567890'
-    }).then((res) => {
-        console.log(res)
-});
-
-//OR
-
-sgGeocode({
-    zipcode: '12345',
-    webKey: '1234567890'
-    }).then((res) => {
-        console.log(res)
+sgGeocode(options).then((res) => {
+    console.log(res)
 });
 ```
 
@@ -101,5 +89,22 @@ You can pass in 3 types of objects
         "types" : [ "postal_code", "geocode" ]
      },
      webKey: SmartyStreetsKey 
+}
+```
+
+## Result
+
+- After a successful call you should receive a response oject like
+```
+{
+    lat: 32.12345,
+    lng: -111.98765
+}
+```
+
+- Unsuccessful calls should receive a response object as,
+```
+{
+    error: "error message"
 }
 ```
