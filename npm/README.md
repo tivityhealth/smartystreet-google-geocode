@@ -88,7 +88,7 @@ You can pass in 3 types of objects
         ],
         "types" : [ "postal_code", "geocode" ]
      },
-     webKey: SmartyStreetsKey 
+     webKey: '1234567890' 
 }
 ```
 
