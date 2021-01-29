@@ -1,24 +1,25 @@
-import {sgGeocode} from '../build/sgGeocode_bundle';
+const {sgGeocode} = require('sgGeocode');
 
-//passing address to get lat long
-    //creating address object
-    let addrObject = {
-        address: '1050 S Terrace Rd Tempe AZ'
-    }
+//create address object with complete address (fullAddress)
+let options = {
+    fullAddress: '123 W Chandler Blvd Chandler AZ',
+    webKey: 'your key'
+}
 
-    //calling the library with zip code
-    sgGeocode(addrObject).then((res) => {
-        //response returns lat long object
-        console.log('Result', res)
-    })
+sgGeocode(options).then((res) => {
+    console.log(res)
+});
 
-//When smartystreet fails to return lat long, the call is redirected to google geocoder
-    //eg: 1448 S Spectrum Blvd Chandler AZ
-    let businessObject = {
-        address: '1448 S Spectrum Blvd Chandler AZ'
-    }
 
-    sgGeocode(businessObject).then((res) => {
-        //response returns lat long object
-        console.log('Result', res)
-    })
+/**
+ * When smartystreet fails to return lat long, the call is redirected to google geocoder
+ * eg: 1448 S Spectrum Blvd Chandler AZ
+*/
+let options = {
+    fullAddress: '1448 S Spectrum Blvd Chandler AZ',
+    webKey: 'your key'
+}
+
+sgGeocode(options).then((res) => {
+    console.log(res)
+})

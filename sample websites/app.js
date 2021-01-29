@@ -132,7 +132,7 @@ const debounce = (func, wait, immediate) => {
     // create the data
     const SmartyStreetsCore = SmartyStreetsSDK.core;
       const Lookup = SmartyStreetsSDK.usZipcode.Lookup;
-    const websiteKey = "8945708976961762"; // Update this with your website key.
+    const websiteKey = "your key here"; // Update this with your website key.
     const credentials = new SmartyStreetsCore.SharedCredentials(websiteKey);
   
       let client = SmartyStreetsCore.buildClient.usZipcode(credentials);

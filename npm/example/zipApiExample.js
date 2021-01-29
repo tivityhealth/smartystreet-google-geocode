@@ -1,27 +1,35 @@
-import {sgGeocode} from '../build/sgGeocode_bundle';
+const {sgGeocode} = require('sgGeocode');
 
-//passing zipcode to get lat long
-    //creating zipcode object
-    let zipObject = {
-        zipcode: '85225'
-    }
+//create zip object with just zipcode
+let options = {
+    zipcode: '12345',
+    webKey: 'your key'
+}
 
-    //calling the library with zip code
-    sgGeocode(zipObject).then((res) => {
-        //response returns lat long object
-        console.log('Result', res)
-    })
+sgGeocode(options).then((res) => {
+    console.log(res)
+});
 
-//passing City/State to get lat long
-    //creating city/state object
-    let cityStateObject = {
-        city: 'Chandler',
-        state: 'AZ'
-    }
+//create zip object with city+state combination
+let options = {
+    city: 'Chandler',
+    state: 'AZ',
+    webKey: 'your key'
+}
 
-    //calling the library with zip code
-    sgGeocode(cityStateObject).then((res) => {
-        //response returns lat long object
-        console.log('Result', res)
-    })
+sgGeocode(options).then((res) => {
+    console.log(res)
+});
 
+//create zip object with all three options (zipcode, city and state)
+
+let options = {
+    zipcode: '85286',
+    city: 'Chandler',
+    state: 'AZ',
+    webKey: 'your key'
+}
+
+sgGeocode(options).then((res) => {
+    console.log(res)
+});
