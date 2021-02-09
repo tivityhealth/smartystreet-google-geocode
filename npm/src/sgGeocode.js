@@ -1,34 +1,7 @@
 const {callZipApi} = require("./zipApi");
 const { callUSStreetApi } = require("./usStreetApi");
 
-const sgGeocode = (options) => {
-  if(isOptionsNUll(options)){
-    throw "Object not defined correctly"
-  }
-  //When user passes either zipcode or city-state combo
-  if (options.zipcode || (options.city && options.state)) {
-    let zipData = {
-      city: options.city,
-      state: options.state,
-      zipcode: options.zipcode,
-      webKey: options.webKey
-    };
-    return callZipApi(zipData)
-        .then(({result}) => result)
-  }
-  //When the user passes complete/partial fullAddress
-  else if (options.fullAddress) {
-      return callUSStreetApi(options)
-        .then(({result}) =>  result )
-  }
-  //When the user passes Google autocomplete object as input
-  else if (options.prediction) {
-     return usePrediction(options)
-        .then(({result}) =>  result )
-  }
-};
-
-const isOptionsNUll = (options) => {
+const isOptionsNull = (options) => {
   if(!options) return true;
   if(!options.fullAddress && !options.zipcode && !options.city && !options.state && !options.prediction) return true;
   return false;
@@ -52,7 +25,7 @@ const usePrediction = (options) => {
       zipData.zipcode = options.prediction.terms[termsLength - 1].value;
     }
     //Checks is autocomplete has only City-State combo
-    else if(termsLength == 2){
+    else if(termsLength === 2){
       zipData.city = options.prediction.terms[0].value;
       zipData.state = options.prediction.terms[1].value;
     }
@@ -63,11 +36,40 @@ const usePrediction = (options) => {
     let streetData = {
       fullAddress: options.prediction.description,
       webKey: options.webKey,
-      gApiKey: options.gApiKey,
+      googleApiKey: options.googleApiKey,
     }
 
     return callUSStreetApi(streetData)
   }
+}
+
+class sgGeocode{
+  static getLatLng(options) {
+    if(isOptionsNull(options)){
+      throw new Error("Object not defined correctly");
+    }
+    //When user passes either zipcode or city-state combo
+    if (options.zipcode || (options.city && options.state)) {
+      let zipData = {
+        city: options.city,
+        state: options.state,
+        zipcode: options.zipcode,
+        webKey: options.webKey
+      };
+      return callZipApi(zipData)
+          .then(({result}) => result)
+    }
+    //When the user passes complete/partial Address
+    else if (options.fullAddress) {
+        return callUSStreetApi(options)
+          .then(({result}) =>  result )
+    }
+    //When the user passes Google autocomplete object as input
+    else if (options.prediction) {
+       return usePrediction(options)
+          .then(({result}) =>  result )
+    }
+  };
 }
 
 exports.sgGeocode = sgGeocode;
