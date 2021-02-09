@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "GeocoderExample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SmartyStreets_AuthToken": "your_key",
+        "Google_Api_Key": "your_key",
+        "SmartyStreets_AuthId": "your_key"
+      }
+    }
+  }
+}
