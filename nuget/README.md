@@ -1,6 +1,6 @@
 # What is this?
 
-Get Lat Long from SmartyStreets and Google Geocoder
+Get Lat Lng from SmartyStreets and Google Geocoder
 
 # Installation
 

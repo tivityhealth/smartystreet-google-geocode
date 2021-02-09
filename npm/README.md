@@ -1,13 +1,10 @@
 # What is this?
-
-Get Lat Long from SmartyStreets and Google Geocoder
+Get Lat Lng from SmartyStreets and Google Geocoder
 
 # Installation
-
 `npm install sggeocode --save`
 
 Then to use it
-
 ```
 const {sgGeocode} = require('sgGeocode');
 
@@ -17,7 +14,6 @@ sgGeocode(options).then((res) => {
 ```
 
 ## Options
-
 - _fullAddress_ - _Complete Address_
 - _zipcode_ - _5 digit zip code_
 - _city_ - _City name_
@@ -93,7 +89,6 @@ You can pass in 3 types of objects
 ```
 
 ## Result
-
 - After a successful call you should receive a response oject like
 ```
 {
