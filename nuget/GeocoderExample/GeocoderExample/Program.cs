@@ -10,13 +10,13 @@ namespace GeocoderExample
         static void Main(string[] args)
         {
             GeocodeInput geocodeInput = new GeocodeInput("85225", null, null);
-            GeoPoint gp = new GeoPoint();
+            GeoPoint result = new GeoPoint();
 
             CreateHostBuilder(args).Build().Run();
 
-            gp = SgGeocoder.CallSgGeocoder(geocodeInput);
+            result = SgGeocoder.CallSgGeocoder(geocodeInput);
 
-            Console.WriteLine(gp.ToString());
+            Console.WriteLine(result.ToString());
 
         }
 
