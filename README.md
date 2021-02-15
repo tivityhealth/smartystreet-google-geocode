@@ -1,4 +1,4 @@
-# smartystreet-google-geocode
+# Introduction
 Combine smartystreet and google geocode to optimize spending and usability
 
 ## Table of Contents
