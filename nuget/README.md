@@ -5,7 +5,9 @@ Get Lat Lng from SmartyStreets and Google Geocoder
 # Installation
 
 Intall package using command line
-`dotnet add package SmartyStreetsGoogleGeocode`
+```#!/bin/bash
+dotnet add package SmartyStreetsGoogleGeocode
+```
 
 Or you can search for `SmartyStreetsGoogleGeocode` in the NuGet package manager
 
@@ -16,16 +18,29 @@ Add your keys accordingly to the environment variable;
 `SmartyStreets_AuthId`,
 `Google_Api_Key`
 
-Configure the application by adding the service (in ConfigureServices())
+Configure the application by adding the service and middleware
 
-```
+```csharp
 services.AddTivityGeocoder();
+
+app.UseTivityGeocoderService();
 ```
 
-Configure the reuqest pipeline by adding the middleware service (in Configure())
-
-```
-services.UseTivityGeocoderService();
+### Configuration Example
+After adding the services in your Startup class, it should look like this,
+```csharp
+public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddTivityGeocoder();
+        }
+        
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseTivityGeocoderService();
+        }
+    }
 ```
 
 ## Input
@@ -39,7 +54,7 @@ You can pass in 2 types of objects
 
 1. Address Object (complete or partial address)
 
-```
+```csharp
 GeocodeInput input = new GeocodeInput(string address)
 ```
 
@@ -47,7 +62,7 @@ GeocodeInput input = new GeocodeInput(string address)
 
 2. Zip object ('zipcode', or combination of 'city' and 'state', or all three of them)
 
-```
+```csharp
 GeocodeInput input = new GeocodeInput(string zipcode, string city, string state)
 ```
 
@@ -59,20 +74,36 @@ OR a combination of all three `zipcode`, `city` & `state`
 
 - After a successful call you should receive a response object GeoPoint
 
-```
+```csharp
 GeoPoint result = new GeoPoint(double latitude, double longitude)
 ```
 
 - ToString() returns result in the format
 
-```
+```csharp
 "<Lat>°N,<Lng>°E"
 ```
 
 ## Example
 
-```
-GeocodeInput geocodeInput = new GeocodeInput("123 E Chandler Blvd, Chandler AZ");
-GeoPoint result = new GeoPoint();
-result = SgGeocoder.CallSgGeocoder(geocodeInput);
+```csharp
+static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+
+            GeocodeInput geocodeInput = new GeocodeInput("123 W Chandler Blvd Chandler AZ");
+            GeoPoint result = new GeoPoint();            
+
+            result = SgGeocoder.CallSgGeocoder(geocodeInput);
+
+            Console.WriteLine(result.ToString());
+
+        }
+
+        static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
 ```
