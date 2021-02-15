@@ -1,7 +1,7 @@
-import {sgGeocode} from '../src/sgGeocode';
+import {SgGeocode} from '../src/SgGeocode';
 
-let SmartyStreetsKey = process.env.WEB_KEY
-let GoogleApiKey = process.env.GOOGLE_API_KEY
+let SmartyStreetsKey = '8945711544447295'
+let GoogleApiKey = 'AIzaSyBiwguft-a0AmS7kCh0nJ9RMh_rrc7e-oY'
 
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
@@ -121,14 +121,14 @@ let obj10 = {
 }
 
 test('test usStreetAPI', () => {
-    return sgGeocode.getLatLng(obj1).then(res => {
+    return SgGeocode.getLatLng(obj1).then(res => {
         expect(res.lat).toBe(33.32371)
         expect(res.lng).toBe(-111.83018)
     })
 });
 
 test('test zipAPI', () => {
-    return sgGeocode.getLatLng(obj2).then(res => {
+    return SgGeocode.getLatLng(obj2).then(res => {
         expect(res.lat).toBe(33.31666)
         expect(res.lng).toBe(-111.83182)
     })
@@ -136,7 +136,7 @@ test('test zipAPI', () => {
 
 it('test invalid zipcode', async () => {
     try {
-        await sgGeocode.getLatLng(obj3);
+        await SgGeocode.getLatLng(obj3);
     } catch (e) {
         expect(e.message).toBe('Invalid ZIP Code.');
     }
@@ -144,7 +144,7 @@ it('test invalid zipcode', async () => {
 
 it('Blank lookup', async () => {
     try {
-        await sgGeocode.getLatLng(obj4);
+        await SgGeocode.getLatLng(obj4);
     } catch (e) {
         expect(e.message).toBe('Blank lookup (you must provide a ZIP Code and/or City/State combination).');
     }
@@ -152,39 +152,39 @@ it('Blank lookup', async () => {
 
 it('test invalid key', async () => {
     try {
-        await sgGeocode.getLatLng(obj5);
+        await SgGeocode.getLatLng(obj5);
     } catch (e) {
         expect(e.message).toBe('Unauthorized: The credentials were provided incorrectly or did not match any existing active credentials.');
     }
 });
 
 test('test Prediction Zipcode', () => {
-    return sgGeocode.getLatLng(obj6).then(res => {
+    return SgGeocode.getLatLng(obj6).then(res => {
         expect(res.lat).toBe(33.31666)
         expect(res.lng).toBe(-111.83182)
     })
 });
 
 test('test Prediction CityState', () => {
-    return sgGeocode.getLatLng(obj7).then(res => {
+    return SgGeocode.getLatLng(obj7).then(res => {
         expect(res.lat).toBe(33.43681)
         expect(res.lng).toBe(-111.943)
     })
 });
 
 test('test Prediction usStreetAPI', () => {
-    return sgGeocode.getLatLng(obj8).then(res => {
+    return SgGeocode.getLatLng(obj8).then(res => {
         expect(res.lat).toBe(33.32371)
         expect(res.lng).toBe(-111.83018)
     })
 });
 
 test('test googleapi', () => {
-   return expect(sgGeocode.getLatLng(obj9)).resolves.toStrictEqual({result:{lat: 33.248528, lng: -111.8381307}})
+   return expect(SgGeocode.getLatLng(obj9)).resolves.toStrictEqual({result:{lat: 33.248528, lng: -111.8381307}})
 });
 
 test('test incorrect object', () => {
     expect(() => {
-        sgGeocode.getLatLng(obj10);
+        SgGeocode.getLatLng(obj10);
     }).toThrow('Object not defined correctly');
 })

@@ -43,7 +43,7 @@ const usePrediction = (options) => {
   }
 }
 
-class sgGeocode{
+class SgGeocode{
   static getLatLng(options) {
     if(isOptionsNull(options)){
       throw new Error("Object not defined correctly");
@@ -72,4 +72,4 @@ class sgGeocode{
   };
 }
 
-exports.sgGeocode = sgGeocode;
+exports.SgGeocode = SgGeocode;
