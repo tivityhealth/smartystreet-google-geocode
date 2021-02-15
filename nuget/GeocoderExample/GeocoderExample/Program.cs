@@ -9,10 +9,12 @@ namespace GeocoderExample
     {
         static void Main(string[] args)
         {
-            GeocodeInput geocodeInput = new GeocodeInput("85225", null, null);
-            GeoPoint result = new GeoPoint();
-
+            //Configure service defaults
             CreateHostBuilder(args).Build().Run();
+
+            //Call SmartyStreets-Google service
+            GeocodeInput geocodeInput = new GeocodeInput("85225", null, null);
+            GeoPoint result = new GeoPoint();            
 
             result = SgGeocoder.CallSgGeocoder(geocodeInput);
 
