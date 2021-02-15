@@ -1,13 +1,8 @@
-# smartystreet-google-geocode
+# Introduction
 Combine smartystreet and google geocode to optimize spending and usability
 
+## Table of Contents
 
-# npm folder
-This is for npm packages that will be used by react or html javascript projects
-
-# nuget folder
-This is for nuget packages that will be used by html javascript or .net framework/core projects
-
-# sample websites
-This is for sample websites that uses the javascript or .net libs.
-
+- [npm](https://github.com/tivityhealth/smartystreet-google-geocode/tree/main/npm)
+- [nuget](https://github.com/tivityhealth/smartystreet-google-geocode/tree/main/nuget)
+- [sample websites](https://github.com/tivityhealth/smartystreet-google-geocode/tree/main/sample%20websites)
