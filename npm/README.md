@@ -8,7 +8,7 @@ npm install sggeocode
 
 # Example
 ```jsx
-const {SgGeocode} = require('sgGeocode');
+const {SgGeocode} = require('sggeocode');
 
 let options = {
     fullAddress: '123 W Chandler Blvd Chandler AZ',
@@ -30,8 +30,8 @@ You can pass in the following parameters in the options object
 - _webKey_ - _SmartyStreets web key_
 - _googleApiKey_ - _Google Places API key_
 
-The object can be constructed in 3 different ways
-1. Address Object (fullAddress)
+The Lookup object can be constructed in 3 different ways
+1. Lookup by Address (fullAddress)
 ```jsx
 let options = {
     fullAddress: '123 W Chandler Blvd Chandler AZ',
@@ -40,7 +40,7 @@ let options = {
 }
 ```
 
-2. Zip object ('zipcode', or combination of 'city' and 'state', or all three of them)
+2. Lookup by Zip ('zipcode', or combination of 'city' and 'state', or all three of them)
 (Google API key is optional when constructing zip object) 
 ```jsx
 let options = {
@@ -65,7 +65,7 @@ let options = {
 }
 ```
 
-3. Google autocomplete object ('prediction'), which looks like this
+3. Lookup by Google autocomplete object ('prediction'),
 ```jsx
 let options = {
     //name the autocomplete object as 'prediction'
