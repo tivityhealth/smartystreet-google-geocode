@@ -2,7 +2,7 @@
 
 Get Lat Lng from SmartyStreets and Google Geocoder
 
-# Installation
+## Installation
 
 Intall package using command line
 ```#!/bin/bash
