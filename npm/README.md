@@ -8,7 +8,7 @@ npm install sggeocode
 
 ## Example
 ```jsx
-const {SgGeocode} = require('sggeocode');
+const {SgGeocode} = require('sgGeocode');
 
 let options = {
     fullAddress: '123 W Chandler Blvd Chandler AZ',
