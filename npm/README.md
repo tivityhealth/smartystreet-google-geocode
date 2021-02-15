@@ -1,12 +1,12 @@
 # Introduction
 Get Lat Lng from SmartyStreets and Google Geocoder
 
-# Installation
+## Installation
 ```#!/bin/bash
 npm install sggeocode
 ```
 
-# Example
+## Example
 ```jsx
 const {SgGeocode} = require('sggeocode');
 
