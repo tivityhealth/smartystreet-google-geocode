@@ -13,7 +13,7 @@ namespace SmartyStreetsGoogleGeocode
             Validations.Required("SmartyStreets_AuthToken", Runtime.SmartyStreetsAuthToken);
             Validations.Required("Google_Api_Key", Runtime.GoogleApiKey);
 
-            services.AddTransient<SgGeocoder>();
+            services.AddSingleton<ISgGeocoder, SgGeocoder>();
         }
     }
 }
