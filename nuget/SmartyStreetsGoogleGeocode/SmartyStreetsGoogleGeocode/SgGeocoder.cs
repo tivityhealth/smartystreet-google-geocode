@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SmartyStreetsGoogleGeocode
 {
@@ -44,7 +42,7 @@ namespace SmartyStreetsGoogleGeocode
                 {
                     _geoInput.address = _geoInput.city + " " + _geoInput.state + " " + _geoInput.zipcode;
                 }
-                result = GoogleGeocode.callGoogleGeocoder(_geoInput.address);
+                result = GoogleGeocode.callGoogleGeocoder(_geoInput);
             }
 
             return result;
