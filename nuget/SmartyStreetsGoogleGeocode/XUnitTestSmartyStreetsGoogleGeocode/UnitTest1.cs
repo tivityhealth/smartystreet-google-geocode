@@ -16,10 +16,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             //LaunchSettingsFixture.SetEnvVariable();
             string zip = "85225";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.CallSgGeocoder();
 
-            GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
-
-            Assert.Equal("(33.31666"+ "\u00B0" + "N,-111.83182" + "\u00B0" + "E)", gp.ToString());
+            Assert.Equal("(33.31666" + "\u00B0" + "N,-111.83182" + "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -29,9 +29,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             string address = "155 E Frye Rd Chandler AZ";
             GeocodeInput dObj = new GeocodeInput(address);
 
-            GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.CallSgGeocoder();
 
-            Assert.Equal("(33.32371"+ "\u00B0" + "N,-111.83018"+ "\u00B0" + "E)", gp.ToString());
+            Assert.Equal("(33.32371" + "\u00B0" + "N,-111.83018" + "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -41,9 +42,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             string add = "LA Fitness, Arizona Ave Chandler AZ";
             GeocodeInput dObj = new GeocodeInput(add);
 
-            GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.CallSgGeocoder();
 
-            Assert.Equal("(33.248528"+ "\u00B0" + "N,-111.8381307"+ "\u00B0" + "E)", gp.ToString());
+            Assert.Equal("(33.248528" + "\u00B0" + "N,-111.8381307" + "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -52,24 +54,11 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             //LaunchSettingsFixture.SetEnvVariable();
             string zip = "abcde";
             GeocodeInput dObj = new GeocodeInput(zip, null, null);
-
-            Exception ex = Assert.Throws<ApplicationException>(() => SgGeocoder.CallSgGeocoder(dObj));
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            Exception ex = Assert.Throws<ApplicationException>(() => sggeocoder.CallSgGeocoder());
 
             Assert.Equal("You must provide a ZIP Code and/or City/State combination. Calling Google Geocoder", ex.Message);
         }
-
-        //[Fact]
-        //public void TestInvalidKeyThrowsException()
-        //{
-        //    Environment.SetEnvironmentVariable("SmartyStreets_AuthId", "1234567890");
-        //    Environment.SetEnvironmentVariable("SmartyStreets_AuthToken", "1234567890");
-        //    string zip = "85225";
-        //    GeocodeInput dObj = new GeocodeInput(zip, null, null);
-
-        //    Exception ex = Assert.Throws<BadCredentialsException>(() => SgGeocoder.CallSgGeocoder(dObj));
-
-        //    Assert.Equal("Unauthorized: The credentials were provided incorrectly or did not match any existing, active credentials.", ex.Message);
-        //}
 
         [Fact]
         public void TestZipApiWithCityStateReturnsResult()
@@ -79,9 +68,10 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             string state = "AZ";
             GeocodeInput dObj = new GeocodeInput(null, city, state);
 
-            GeoPoint gp = SgGeocoder.CallSgGeocoder(dObj);
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.CallSgGeocoder();
 
-            Assert.Equal("(33.32212"+ "\u00B0" + "N,-111.87374"+ "\u00B0" + "E)", gp.ToString());
+            Assert.Equal("(33.32212" + "\u00B0" + "N,-111.87374" + "\u00B0" + "E)", gp.ToString());
         }
 
         [Fact]
@@ -91,7 +81,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             string state = "AZ";
             GeocodeInput dObj = new GeocodeInput(null, null, state);
 
-            Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder());
 
             Assert.Equal("City/State cannot be null or empty (Parameter 'CityState')", ex.Message);
         }
@@ -103,7 +94,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
             string city = "Chandler";
             GeocodeInput dObj = new GeocodeInput(null, city, null);
 
-            Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder());
 
             Assert.Equal("City/State cannot be null or empty (Parameter 'CityState')", ex.Message);
         }
@@ -113,7 +105,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         {
             GeocodeInput dObj = new GeocodeInput(null, null, null);
 
-            Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder());
 
             Assert.Equal("Arguments cannot be null or empty (Parameter 'GeocodeInput')", ex.Message);
         }
@@ -123,7 +116,8 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
         {
             GeocodeInput dObj = new GeocodeInput("");
 
-            Exception ex = Assert.Throws<ArgumentNullException>(() => SgGeocoder.CallSgGeocoder(dObj));
+            SgGeocoder sggeocoder = new SgGeocoder(dObj);
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder());
 
             Assert.Equal("Arguments cannot be null or empty (Parameter 'GeocodeInput')", ex.Message);
         }

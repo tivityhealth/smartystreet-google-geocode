@@ -4,41 +4,47 @@ using System.Text;
 
 namespace SmartyStreetsGoogleGeocode
 {
-    public class SgGeocoder
+    public class SgGeocoder : ISgGeocoder
     {
-        public static GeoPoint CallSgGeocoder(GeocodeInput geoInput)
+        private GeocodeInput _geoInput;
+
+        public SgGeocoder(GeocodeInput geoInput)
+        {
+            _geoInput = geoInput;
+        }
+        public GeoPoint CallSgGeocoder()
         {
             GeoPoint result;
 
-            if (geoInput.IsNull())
+            if (_geoInput.IsNull())
             {
                 throw new ArgumentNullException("GeocodeInput", "Arguments cannot be null or empty");
             }
-            
-            if (geoInput.address != null && (geoInput.zipcode == null || geoInput.state == null || geoInput.city == null))
-            {                
-                result = UsStreetApi.CallUsStreet(geoInput);
+
+            if (_geoInput.address != null && (_geoInput.zipcode == null || _geoInput.state == null || _geoInput.city == null))
+            {
+                result = UsStreetApi.CallUsStreet(_geoInput);
             }
             else
             {
                 //Zip fail should throw an exception. Do not call Google geocoder if fails
-                if(geoInput.zipcode == null)
+                if (_geoInput.zipcode == null)
                 {
-                    if(geoInput.city == null || geoInput.state == null)
+                    if (_geoInput.city == null || _geoInput.state == null)
                     {
                         throw new ArgumentNullException("CityState", "City/State cannot be null or empty");
                     }
                 }
-                result = ZipApi.CallZip(geoInput);
+                result = ZipApi.CallZip(_geoInput);
             }
 
             if (result == null)
             {
-                if(geoInput.address == null)
+                if (_geoInput.address == null)
                 {
-                    geoInput.address = geoInput.city + " " + geoInput.state + " " + geoInput.zipcode;
+                    _geoInput.address = _geoInput.city + " " + _geoInput.state + " " + _geoInput.zipcode;
                 }
-                result = GoogleGeocode.callGoogleGeocoder(geoInput.address);
+                result = GoogleGeocode.callGoogleGeocoder(_geoInput.address);
             }
 
             return result;
