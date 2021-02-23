@@ -1,9 +1,8 @@
 name: "🚀 publish nuget"
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   release:
