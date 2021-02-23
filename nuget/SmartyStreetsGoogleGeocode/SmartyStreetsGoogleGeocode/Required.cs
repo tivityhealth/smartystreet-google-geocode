@@ -17,7 +17,6 @@ namespace SmartyStreetsGoogleGeocode
             {
                 throw new ApplicationException($"{label} is required");
             }
-
         }
     }
 }

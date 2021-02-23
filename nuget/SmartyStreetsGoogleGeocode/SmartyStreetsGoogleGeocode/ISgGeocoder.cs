@@ -4,6 +4,6 @@ namespace SmartyStreetsGoogleGeocode
 {
     public interface ISgGeocoder
     {
-        GeoPoint CallSgGeocoder(GeocodeInput geoInput);
+        GeoPoint GetLatLng(GeocodeInput geoInput);
     }
 }

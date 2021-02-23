@@ -1,9 +1,5 @@
-using Newtonsoft.Json;
-using SmartyStreets;
 using SmartyStreetsGoogleGeocode;
 using System;
-using System.IO;
-using System.Net;
 using Xunit;
 
 namespace XUnitTestSmartyStreetsGoogleGeocode
@@ -20,7 +16,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            GeoPoint gp = sggeocoder.CallSgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.GetLatLng(dObj);
 
             Assert.Equal("(33.31666" + "\u00B0" + "N,-111.83182" + "\u00B0" + "E)", gp.ToString());
         }
@@ -38,7 +34,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            GeoPoint gp = sggeocoder.CallSgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.GetLatLng(dObj);
 
             Assert.Equal("(33.32371" + "\u00B0" + "N,-111.83018" + "\u00B0" + "E)", gp.ToString());
         }
@@ -56,7 +52,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            GeoPoint gp = sggeocoder.CallSgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.GetLatLng(dObj);
 
             Assert.Equal("(33.248528" + "\u00B0" + "N,-111.8381307" + "\u00B0" + "E)", gp.ToString());
         }
@@ -73,7 +69,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            Exception ex = Assert.Throws<ApplicationException>(() => sggeocoder.CallSgGeocoder(dObj));
+            Exception ex = Assert.Throws<ApplicationException>(() => sggeocoder.GetLatLng(dObj));
 
             Assert.Equal("You must provide a ZIP Code and/or City/State combination. Calling Google Geocoder", ex.Message);
         }
@@ -93,7 +89,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
 
-            GeoPoint gp = sggeocoder.CallSgGeocoder(dObj);
+            GeoPoint gp = sggeocoder.GetLatLng(dObj);
 
             Assert.Equal("(33.32212" + "\u00B0" + "N,-111.87374" + "\u00B0" + "E)", gp.ToString());
         }
@@ -111,7 +107,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder(dObj));
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.GetLatLng(dObj));
 
             Assert.Equal("City/State cannot be null or empty (Parameter 'CityState')", ex.Message);
         }
@@ -129,7 +125,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder(dObj));
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.GetLatLng(dObj));
 
             Assert.Equal("City/State cannot be null or empty (Parameter 'CityState')", ex.Message);
         }
@@ -145,7 +141,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder(dObj));
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.GetLatLng(dObj));
 
             Assert.Equal("Arguments cannot be null or empty (Parameter 'GeocodeInput')", ex.Message);
         }
@@ -161,7 +157,7 @@ namespace XUnitTestSmartyStreetsGoogleGeocode
                 SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
                 GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
             });
-            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.CallSgGeocoder(dObj));
+            Exception ex = Assert.Throws<ArgumentNullException>(() => sggeocoder.GetLatLng(dObj));
 
             Assert.Equal("Arguments cannot be null or empty (Parameter 'GeocodeInput')", ex.Message);
         }

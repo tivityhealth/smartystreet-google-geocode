@@ -13,3 +13,7 @@ C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStr
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.AssemblyInfo.cs
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.pdb
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\bin\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.deps.json
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\bin\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.dll
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\bin\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.pdb
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\SmartyStreetsGoogleGeocode\obj\Debug\netstandard2.0\SmartyStreetsGoogleGeocode.csproj.CoreCompileInputs.cache

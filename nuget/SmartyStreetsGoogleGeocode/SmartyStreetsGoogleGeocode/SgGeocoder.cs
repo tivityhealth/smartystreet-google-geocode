@@ -9,8 +9,8 @@ namespace SmartyStreetsGoogleGeocode
         {
             this.authOptions = authOptions;
         }
-        //inputs here
-        public GeoPoint CallSgGeocoder(GeocodeInput geoInput)
+        
+        public GeoPoint GetLatLng(GeocodeInput geoInput)
         {
             GeoPoint result;
 
