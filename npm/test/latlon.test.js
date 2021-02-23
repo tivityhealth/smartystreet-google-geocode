@@ -1,4 +1,4 @@
-const {SgGeocode} = require('../src/SgGeocode')
+const {SgGeocode} = require('../src/SgGeocode.js')
 
 let SmartyStreetsKey = process.env.WEB_KEY
 let GoogleApiKey = process.env.GOOGLE_API_KEY
@@ -127,7 +127,7 @@ test('test usStreetAPI', () => {
     })
 });
 
-test('test zipAPI', () => {
+test.only('test zipAPI', () => {
     return SgGeocode.getLatLng(obj2).then(res => {
         expect(res.lat).toBe(33.31666)
         expect(res.lng).toBe(-111.83182)
