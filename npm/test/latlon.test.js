@@ -1,4 +1,4 @@
-import {SgGeocode} from '../src/SgGeocode.js'
+const {SgGeocode} = require('../SgGeocode.js')
 
 let SmartyStreetsKey = process.env.WEB_KEY
 let GoogleApiKey = process.env.GOOGLE_API_KEY
