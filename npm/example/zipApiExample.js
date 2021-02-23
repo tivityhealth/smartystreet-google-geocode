@@ -1,4 +1,4 @@
-const {sgGeocode} = require('sgGeocode');
+const {SgGeocode} = require('sggeocode');
 
 //create zip object with just zipcode
 let options = {
@@ -6,7 +6,7 @@ let options = {
     webKey: 'your key'
 }
 
-sgGeocode(options).then((res) => {
+SgGeocode.getLatLng(options).then((res) => {
     console.log(res)
 });
 
@@ -17,7 +17,7 @@ let options = {
     webKey: 'your key'
 }
 
-sgGeocode(options).then((res) => {
+SgGeocode.getLatLng(options).then((res) => {
     console.log(res)
 });
 
@@ -30,6 +30,6 @@ let options = {
     webKey: 'your key'
 }
 
-sgGeocode(options).then((res) => {
+SgGeocode.getLatLng(options).then((res) => {
     console.log(res)
 });

@@ -1,4 +1,4 @@
-const {sgGeocode} = require('sgGeocode');
+const {SgGeocode} = require('sgGeocode');
 
 //create address object with complete address (fullAddress)
 let options = {
@@ -6,7 +6,7 @@ let options = {
     webKey: 'your key'
 }
 
-sgGeocode(options).then((res) => {
+SgGeocode.getLatLng(options).then((res) => {
     console.log(res)
 });
 
@@ -20,6 +20,6 @@ let options = {
     webKey: 'your key'
 }
 
-sgGeocode(options).then((res) => {
+SgGeocode.getLatLng(options).then((res) => {
     console.log(res)
 })
