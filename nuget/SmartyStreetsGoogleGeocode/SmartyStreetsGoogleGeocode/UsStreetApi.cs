@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using SmartyStreets;
 using SmartyStreets.USStreetApi;
@@ -7,10 +8,11 @@ namespace SmartyStreetsGoogleGeocode
 {
     class UsStreetApi
     {
-        public static GeoPoint CallUsStreet(GeocodeInput options)
+        public static GeoPoint CallUsStreet(GeocodeInput options, AuthOptions authOptions)
         {
-            var authId = Runtime.SmartyStreetsAuthId;
-            var authToken = Runtime.SmartyStreetsAuthToken;
+            string authId = authOptions.SmartyStreetsAuthId;
+
+            string authToken = authOptions.SmartyStreetsAuthToken;
 
             var client = new ClientBuilder(authId, authToken)
                 //.WithCustomBaseUrl("us-street.api.smartystreets.com")

@@ -7,13 +7,13 @@ namespace SmartyStreetsGoogleGeocode
 {
     public static class CommonApiServiceCollectionExtensions
     {
-        public static void AddTivityGeocoder(this IServiceCollection services)
+        public static void AddTivityGeocoder(this IServiceCollection services, AuthOptions options)
         {
-            Validations.Required("SmartyStreets_AuthId", Runtime.SmartyStreetsAuthId);
-            Validations.Required("SmartyStreets_AuthToken", Runtime.SmartyStreetsAuthToken);
-            Validations.Required("Google_Api_Key", Runtime.GoogleApiKey);
+            Validations.Required("SmartyStreets_AuthId", options.SmartyStreetsAuthId);
+            Validations.Required("SmartyStreets_AuthToken", options.SmartyStreetsAuthToken);
+            Validations.Required("Google_Api_Key", options.GoogleApiKey);
 
-            services.AddSingleton<ISgGeocoder, SgGeocoder>();
+            services.AddSingleton<ISgGeocoder>(f => new SgGeocoder(options));
         }
     }
 }

@@ -1,17 +1,16 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Configuration;
 using System.Net;
 
 namespace SmartyStreetsGoogleGeocode
 {
     public class GoogleGeocode
     {
-        //const String apiKey = "AIzaSyDafu_-z71kEUS5uuELV2mf252rMIgED54";
-
-        public static GeoPoint callGoogleGeocoder(GeocodeInput options)
+        public static GeoPoint callGoogleGeocoder(GeocodeInput options, AuthOptions authOptions)
         {
             GeoPoint geoPoint = new GeoPoint();
-            string apiKey = Runtime.GoogleApiKey;
+            string apiKey = authOptions.GoogleApiKey;
             string requestUri = string.Format("https://maps.googleapis.com/maps/api/geocode/json?key={1}&address={0}&sensor=true", Uri.EscapeDataString(options.address), apiKey);
 
             WebClient wc = new WebClient();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.IO;
 using SmartyStreets;
 using SmartyStreets.USZipCodeApi;
@@ -7,11 +8,13 @@ namespace SmartyStreetsGoogleGeocode
 {
     class ZipApi
     {
-        public static GeoPoint CallZip(GeocodeInput options)
+        public static GeoPoint CallZip(GeocodeInput options, AuthOptions authOptions)
         {
             // You don't have to store your keys in environment variables, but we recommend it.
-            var authId = Runtime.SmartyStreetsAuthId;
-            var authToken = Runtime.SmartyStreetsAuthToken;
+            string authId = authOptions.SmartyStreetsAuthId;
+
+            string authToken = authOptions.SmartyStreetsAuthToken;
+
             var client = new ClientBuilder(authId, authToken).BuildUsZipCodeApiClient();
 
             // Documentation for input fields can be found at:
