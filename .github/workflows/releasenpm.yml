@@ -1,9 +1,8 @@
 name: "🚀 publish npm"
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 jobs:
   release:
@@ -26,11 +25,11 @@ jobs:
           CI: true
           WEB_KEY: ${{ secrets.WEB_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      #- name: Build bundle
-      #  run: cd npm && npm run build
-      #- name: update version
-      #  run: cd npm && npm version ${{ github.event.release.tag_name }}
-      #- name: publish
-      #  run: cd npm && npm publish
-      #  env:
-      #    NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      - name: Build bundle
+        run: cd npm && npm run build
+      - name: update version
+        run: cd npm && npm version ${{ github.event.release.tag_name }}
+      - name: publish
+        run: cd npm && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
