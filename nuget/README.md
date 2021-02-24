@@ -22,7 +22,6 @@ Add your keys with the following name to the environment variable;
 > **NOTE:** You can find Environment variables in your project properties, under the `Debug` section
 
 Configure the application by adding the geocoder service. Your `ConfigureServices` method should look like,
-> **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -35,11 +34,11 @@ public void ConfigureServices(IServiceCollection services)
     });
 }
 ```
+> **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
 
 ## Example
 
 We have our services set up to easily inject instances of ISgGeocoder by adding `AddTivityGeocoder` service. Now we have to setup our class for proper injection
-> **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
 
 ```csharp
 class GeocoderExample
@@ -58,6 +57,7 @@ class GeocoderExample
         }
     }
 ```
+> **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
 
 # Usage for .net core
 
