@@ -11,39 +11,92 @@ dotnet add package SmartyStreetsGoogleGeocode
 
 Or you can search for `SmartyStreetsGoogleGeocode` in the NuGet package manager
 
-## Configurations
+# Usage for .net core
 
-Add your keys accordingly to the environment variable;
+## Configuration
+
+Add your keys with the following name to the environment variable;
 `SmartyStreets_AuthToken`,
 `SmartyStreets_AuthId`,
 `Google_Api_Key`
+> **NOTE:** You can find Environment variables in your project properties, under the `Debug` section
 
-Configure the application by adding the service and middleware
+Configure the application by adding the geocoder service. Your `ConfigureServices` method should look like,
+> **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
 
 ```csharp
-services.AddTivityGeocoder();
-
-app.UseTivityGeocoderService();
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddTivityGeocoder(new AuthOptions
+    {
+        SmartyStreetsAuthId = Environment.GetEnvironmentVariable("SmartyStreets_AuthId"),
+        SmartyStreetsAuthToken = Environment.GetEnvironmentVariable("SmartyStreets_AuthToken"),
+        GoogleApiKey = Environment.GetEnvironmentVariable("Google_Api_Key")
+    });
+}
 ```
 
-### Configuration Example
-After adding the services in your Startup class, it should look like this,
+## Example
+
+We have our services set up to easily inject instances of ISgGeocoder by adding `AddTivityGeocoder` service. Now we have to setup our class for proper injection
+> **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
+
 ```csharp
-public class Startup
+class GeocoderExample
     {
-        public void ConfigureServices(IServiceCollection services)
+        private readonly ISgGeocoder _sgGeocoder;
+        public ConsoleApplication(ISgGeocoder sgGeocoder)
         {
-            services.AddTivityGeocoder();
+            _sgGeocoder = sgGeocoder;
         }
-        
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        //You can define this method as per your needs
+        public void Run()
         {
-            app.UseTivityGeocoderService();
+            GeocodeInput geoInput = new GeocodeInput("85225", null, null);
+            var result = _sgGeocoder.CallSgGeocoder(geoInput);
+            Console.WriteLine(result);
         }
     }
 ```
 
-## Input
+# Usage for .net core
+
+## Configuration
+
+Add the keys and values to your `App.config`. It should be looking like this;
+
+```xml
+<appSettings>  
+  <add key="SmartyStreets_AuthId" value="your auth id"/>
+  <add key="SmartyStreets_AuthToken" value="your auth token"/>
+  <add key="Google_Api_Key" value="your google api key"/>
+</appSettings>
+```
+
+## Example
+
+You can directly create instance of SgGeocode and pass in the auth keys and GeocodeInput wihtout any dependency injection
+
+```csharp
+class GeocoderFrameworkExample{
+    static void Main()
+    {
+        GeocodeInput geocodeInput = new GeocodeInput("85225", null, null);
+
+        SgGeocoder sgGeocoder = new SgGeocoder(new AuthOptions
+        {
+            SmartyStreetsAuthId = ConfigurationManager.AppSettings.Get("SmartyStreets_AuthId"),
+            SmartyStreetsAuthToken = ConfigurationManager.AppSettings.Get("SmartyStreets_AuthToken"),
+            GoogleApiKey = ConfigurationManager.AppSettings.Get("Google_Api_Key"),
+        });
+        GeoPoint result = sgGeocoder.GetLatLng(geocodeInput);
+
+        Console.WriteLine(result);
+    }
+}
+```
+
+# Input
 
 - _address_ - _Complete/Partial Address_
 - _zipcode_ - _5 digit zip code_
@@ -82,28 +135,4 @@ GeoPoint result = new GeoPoint(double latitude, double longitude)
 
 ```csharp
 "<Lat>°N,<Lng>°E"
-```
-
-## Example
-
-```csharp
-static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-
-            GeocodeInput geocodeInput = new GeocodeInput("123 W Chandler Blvd Chandler AZ");
-            GeoPoint result = new GeoPoint();            
-
-            result = SgGeocoder.CallSgGeocoder(geocodeInput);
-
-            Console.WriteLine(result.ToString());
-
-        }
-
-        static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
 ```
