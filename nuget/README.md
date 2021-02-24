@@ -15,13 +15,13 @@ Or you can search for `SmartyStreetsGoogleGeocode` in the NuGet package manager
 
 ## Configuration
 
-Add your keys with the following name to the environment variable;
+1. Add your keys with the following name to the environment variable;
 `SmartyStreets_AuthToken`,
 `SmartyStreets_AuthId`,
 `Google_Api_Key`
 > **NOTE:** You can find Environment variables in your project properties, under the `Debug` section
 
-Configure the application by adding the geocoder service. Your `ConfigureServices` method should look like,
+2. Configure the application by adding the geocoder service. Your `ConfigureServices` method should look like,
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
