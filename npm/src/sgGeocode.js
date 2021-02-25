@@ -72,4 +72,8 @@ class SgGeocode{
   };
 }
 
+if (typeof window !== 'undefined') {
+  window.SgGeocode = SgGeocode
+}
+
 exports.SgGeocode = SgGeocode;
