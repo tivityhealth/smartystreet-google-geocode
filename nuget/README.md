@@ -59,7 +59,7 @@ class GeocoderExample
 ```
 > **NOTE:** include `using SmartyStreetsGoogleGeocode;` at the top
 
-# Usage for .net core
+# Usage for .net framework
 
 ## Configuration
 
