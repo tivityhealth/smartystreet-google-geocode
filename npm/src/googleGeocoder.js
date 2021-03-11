@@ -6,7 +6,7 @@ const handleResult = (res) => {
 		lng: res.data.results[0].geometry.location.lng
 	}
 
-	return { result };
+	return result;
 }
 
 const handleError = (e) => {
