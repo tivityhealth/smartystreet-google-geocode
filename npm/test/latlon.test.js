@@ -127,7 +127,7 @@ test('test usStreetAPI', () => {
     })
 });
 
-test.only('test zipAPI', () => {
+test('test zipAPI', () => {
     return SgGeocode.getLatLng(obj2).then(res => {
         expect(res.lat).toBe(33.31666)
         expect(res.lng).toBe(-111.83182)

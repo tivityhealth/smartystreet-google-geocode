@@ -1,4 +1,4 @@
-const { Client } = require("@googlemaps/google-maps-services-js");
+const axios = require("axios");
 
 const handleResult = (res) => {
 	let result = {
@@ -14,16 +14,9 @@ const handleError = (e) => {
 }
 
 const callGeocoder = (fullAddress, apiKey) => {
-	const client = new Client({});
+	const geocoderQuery = encodeURIComponent(`${fullAddress}`.replace(/ /g, '+'))
 
-	return client
-		.geocode({
-			params: {
-				address: fullAddress,
-				key: apiKey,
-			},
-			timeout: 1000, // milliseconds
-		})
+	return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${geocoderQuery}&key=${apiKey}`)
 		.then((res) => {
 			return handleResult(res)
 		})
