@@ -1,7 +1,7 @@
 const {SgGeocode} = require('../src/sgGeocode')
 
-let SmartyStreetsKey = '8945712748934021'
-let GoogleApiKey = 'AIzaSyBiwguft-a0AmS7kCh0nJ9RMh_rrc7e-oY'
+let SmartyStreetsKey = process.env.WEB_KEY
+let GoogleApiKey = process.env.GOOGLE_API_KEY
 
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
