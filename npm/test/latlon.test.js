@@ -1,7 +1,7 @@
 const {SgGeocode} = require('../src/sgGeocode')
 
-let SmartyStreetsKey = process.env.WEB_KEY
-let GoogleApiKey = process.env.GOOGLE_API_KEY
+let SmartyStreetsKey = '8945712748934021'
+let GoogleApiKey = 'AIzaSyBiwguft-a0AmS7kCh0nJ9RMh_rrc7e-oY'
 
 let obj1 = {
     fullAddress: '155 E Frye Rd Chandler AZ',
@@ -180,7 +180,10 @@ test('test Prediction usStreetAPI', () => {
 });
 
 test('test googleapi', () => {
-   return expect(SgGeocode.getLatLng(obj9)).resolves.toStrictEqual({result:{lat: 33.248528, lng: -111.8381307}})
+    return SgGeocode.getLatLng(obj9).then(res => {
+        expect(res.lat).toBe(33.248528)
+        expect(res.lng).toBe(-111.8381307)
+    })
 });
 
 test('test incorrect object', () => {
