@@ -114,7 +114,6 @@ C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStr
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\testhost.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\smartystreets-dotnet-sdk.dll
-C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\xunit.assert.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\xunit.core.dll
@@ -217,3 +216,6 @@ C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStr
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\obj\Debug\netcoreapp3.1\XUnitTestSmartyStreetsGoogleGeocode.csproj.CoreCompileInputs.cache
 C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\obj\Debug\netcoreapp3.1\XUnitTestSmartyStreetsGoogleGeocode.genruntimeconfig.cache
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\testhost.exe
+C:\code\Innovation\SgGeocode Updates\smartystreet-google-geocode\nuget\SmartyStreetsGoogleGeocode\XUnitTestSmartyStreetsGoogleGeocode\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll

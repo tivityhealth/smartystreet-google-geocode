@@ -106,7 +106,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "smartystreets-dotnet-sdk/8.6.1": {
+      "smartystreets-dotnet-sdk/8.8.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/smartystreets-dotnet-sdk.dll": {}
@@ -474,17 +474,17 @@
         "packageIcon.png"
       ]
     },
-    "smartystreets-dotnet-sdk/8.6.1": {
-      "sha512": "qznaQxfND81Q1xYdeqbowOlSrsOQpzlGqAVkBPTCDLqdvH3jlEv2X2HSngwpdhuZTLwe8dkgTFGUX0yGpt9ITw==",
+    "smartystreets-dotnet-sdk/8.8.0": {
+      "sha512": "ArYfwNhA3XAvlQHV/873PgKTSoMf88HdiMDDW43S5mzunyDP8Yvye4/A0vguOvdEbYBmybXZGJTD48GH0Y41Nw==",
       "type": "package",
-      "path": "smartystreets-dotnet-sdk/8.6.1",
+      "path": "smartystreets-dotnet-sdk/8.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net35/smartystreets-dotnet-sdk.dll",
         "lib/net40/smartystreets-dotnet-sdk.dll",
         "lib/netstandard2.0/smartystreets-dotnet-sdk.dll",
-        "smartystreets-dotnet-sdk.8.6.1.nupkg.sha512",
+        "smartystreets-dotnet-sdk.8.8.0.nupkg.sha512",
         "smartystreets-dotnet-sdk.nuspec"
       ]
     },
@@ -848,7 +848,7 @@
       "Microsoft.Extensions.Hosting.Abstractions >= 5.0.0",
       "Newtonsoft.Json >= 12.0.3",
       "System.Configuration.ConfigurationManager >= 5.0.0",
-      "smartystreets-dotnet-sdk >= 8.6.1"
+      "smartystreets-dotnet-sdk >= 8.8.0"
     ]
   },
   "packageFolders": {
@@ -918,7 +918,7 @@
           },
           "smartystreets-dotnet-sdk": {
             "target": "Package",
-            "version": "[8.6.1, )"
+            "version": "[8.8.0, )"
           }
         },
         "imports": [
