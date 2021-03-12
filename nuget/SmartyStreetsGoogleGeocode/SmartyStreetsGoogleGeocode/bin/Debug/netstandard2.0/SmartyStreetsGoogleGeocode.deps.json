@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "SmartyStreetsGoogleGeocode/1.0.0": {
+      "SmartyStreetsGoogleGeocode/1.0.1": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.CSharp": "4.7.0",
@@ -15,7 +15,7 @@
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
           "System.Configuration.ConfigurationManager": "5.0.0",
-          "smartystreets-dotnet-sdk": "8.8.0"
+          "smartystreets-dotnet-sdk": "8.6.1"
         },
         "runtime": {
           "SmartyStreetsGoogleGeocode.dll": {}
@@ -135,11 +135,11 @@
           }
         }
       },
-      "smartystreets-dotnet-sdk/8.8.0": {
+      "smartystreets-dotnet-sdk/8.6.1": {
         "runtime": {
           "lib/netstandard2.0/smartystreets-dotnet-sdk.dll": {
-            "assemblyVersion": "8.8.0.0",
-            "fileVersion": "8.8.0.0"
+            "assemblyVersion": "8.6.1.0",
+            "fileVersion": "8.6.1.0"
           }
         }
       },
@@ -255,7 +255,7 @@
     }
   },
   "libraries": {
-    "SmartyStreetsGoogleGeocode/1.0.0": {
+    "SmartyStreetsGoogleGeocode/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -344,12 +344,12 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
-    "smartystreets-dotnet-sdk/8.8.0": {
+    "smartystreets-dotnet-sdk/8.6.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ArYfwNhA3XAvlQHV/873PgKTSoMf88HdiMDDW43S5mzunyDP8Yvye4/A0vguOvdEbYBmybXZGJTD48GH0Y41Nw==",
-      "path": "smartystreets-dotnet-sdk/8.8.0",
-      "hashPath": "smartystreets-dotnet-sdk.8.8.0.nupkg.sha512"
+      "sha512": "sha512-qznaQxfND81Q1xYdeqbowOlSrsOQpzlGqAVkBPTCDLqdvH3jlEv2X2HSngwpdhuZTLwe8dkgTFGUX0yGpt9ITw==",
+      "path": "smartystreets-dotnet-sdk/8.6.1",
+      "hashPath": "smartystreets-dotnet-sdk.8.6.1.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

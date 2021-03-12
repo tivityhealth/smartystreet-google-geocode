@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.5",
       "restore": {
         "projectUniqueName": "C:\\code\\Innovation\\SgGeocode Updates\\smartystreet-google-geocode\\nuget\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode\\SmartyStreetsGoogleGeocode.csproj",
         "projectName": "SmartyStreetsGoogleGeocode",
@@ -73,7 +73,7 @@
             },
             "smartystreets-dotnet-sdk": {
               "target": "Package",
-              "version": "[8.8.0, )"
+              "version": "[8.6.1, )"
             }
           },
           "imports": [
