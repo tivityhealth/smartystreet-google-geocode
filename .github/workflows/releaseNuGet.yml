@@ -21,7 +21,7 @@ jobs:
       - name: Build solution
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
-          dotnet build
+          dotnet build --configuration release
       - name: Test
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
