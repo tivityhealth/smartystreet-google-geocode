@@ -17,11 +17,11 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3
+          dotnet-version: '3.1.x'
       - name: Build solution
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
-          dotnet build --configuration release
+          dotnet build
       - name: Test
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
