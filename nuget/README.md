@@ -52,7 +52,7 @@ class GeocoderExample
         public void Run()
         {
             GeocodeInput geoInput = new GeocodeInput("85225", null, null);
-            var result = _sgGeocoder.CallSgGeocoder(geoInput);
+            var result = _sgGeocoder.GetLatLng(geoInput);
             Console.WriteLine(result);
         }
     }
