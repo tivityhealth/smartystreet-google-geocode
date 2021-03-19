@@ -1,28 +1,33 @@
 const {SgGeocode} = require('../src/sgGeocode')
 
-let SmartyStreetsKey = process.env.WEB_KEY
-let GoogleApiKey = process.env.GOOGLE_API_KEY
+let SmartyStreetsKey = '8945712748934021'
+let GoogleApiKey = 'AIzaSyBiwguft-a0AmS7kCh0nJ9RMh_rrc7e-oY'
+
+let keys = {
+    webKey: SmartyStreetsKey,
+    googleApiKey: GoogleApiKey,
+}
+
+let invalidKeys = {
+    webKey: '123456789',
+    googleApiKey: '123456789',
+}
 
 let obj1 = {
-    fullAddress: '155 E Frye Rd Chandler AZ',
-    webKey: SmartyStreetsKey
+    fullAddress: '155 E Frye Rd Chandler AZ'
 }
 let obj2 = {
-    zipcode: '85225',
-    webKey: SmartyStreetsKey
+    zipcode: '85225'
 }
 let obj3 = {
-    zipcode: '1234',
-    webKey: SmartyStreetsKey
+    zipcode: '1234'
 }
 let obj4 = {
-    zipcode: 'abcd',
-    webKey: SmartyStreetsKey
+    zipcode: 'abcd'
 }
 
 let obj5 = {
-    zipcode: '85225',
-    webKey: '1234567890'
+    zipcode: '85225'
 }
 
 let obj6 = {
@@ -53,8 +58,7 @@ let obj6 = {
            }
         ],
         "types" : [ "postal_code", "geocode" ]
-     },
-     webKey: SmartyStreetsKey 
+     }
 }
 
 let obj7 = {
@@ -75,8 +79,7 @@ let obj7 = {
            }
         ],
         "types" : [ "locality", "political", "geocode" ]
-     },
-     webKey: SmartyStreetsKey 
+     }
 }
 
 let obj8 = {
@@ -105,14 +108,11 @@ let obj8 = {
            }
         ],
         "types" : [ "premise", "geocode" ]
-     },
-     webKey: SmartyStreetsKey 
+     }
 }
 
 let obj9 = {
-    fullAddress: 'LA Fitness, S Arizona Avenue, Chandler AZ',
-    webKey: SmartyStreetsKey,
-    googleApiKey: GoogleApiKey,
+    fullAddress: 'LA Fitness, S Arizona Avenue, Chandler AZ'
 }
 
 let obj10 = {
@@ -121,20 +121,18 @@ let obj10 = {
 }
 
 let obj11 = {
-    fullAddress: 'sdflkjsdfablsdkfjsdfdsfl',
-    webKey: SmartyStreetsKey,
-    googleApiKey: GoogleApiKey,
+    fullAddress: 'sdflkjsdfablsdkfjsdfdsfl'
 }
 
 test('test usStreetAPI', () => {
-    return SgGeocode.getLatLng(obj1).then(res => {
+    return SgGeocode.getLatLng(obj1, keys).then(res => {
         expect(res.lat).toBe(33.32371)
         expect(res.lng).toBe(-111.83018)
     })
 });
 
 test('test zipAPI', () => {
-    return SgGeocode.getLatLng(obj2).then(res => {
+    return SgGeocode.getLatLng(obj2, keys).then(res => {
         expect(res.lat).toBe(33.31666)
         expect(res.lng).toBe(-111.83182)
     })
@@ -142,7 +140,7 @@ test('test zipAPI', () => {
 
 it('test invalid zipcode', async () => {
     try {
-        await SgGeocode.getLatLng(obj3);
+        await SgGeocode.getLatLng(obj3, keys);
     } catch (e) {
         expect(e.message).toBe('Invalid ZIP Code.');
     }
@@ -150,7 +148,7 @@ it('test invalid zipcode', async () => {
 
 it('Blank lookup', async () => {
     try {
-        await SgGeocode.getLatLng(obj4);
+        await SgGeocode.getLatLng(obj4, keys);
     } catch (e) {
         expect(e.message).toBe('Blank lookup (you must provide a ZIP Code and/or City/State combination).');
     }
@@ -158,35 +156,35 @@ it('Blank lookup', async () => {
 
 it('test invalid key', async () => {
     try {
-        await SgGeocode.getLatLng(obj5);
+        await SgGeocode.getLatLng(obj5, invalidKeys);
     } catch (e) {
         expect(e.message).toBe('Unauthorized: The credentials were provided incorrectly or did not match any existing active credentials.');
     }
 });
 
 test('test Prediction Zipcode', () => {
-    return SgGeocode.getLatLng(obj6).then(res => {
+    return SgGeocode.getLatLng(obj6, keys).then(res => {
         expect(res.lat).toBe(33.31666)
         expect(res.lng).toBe(-111.83182)
     })
 });
 
 test('test Prediction CityState', () => {
-    return SgGeocode.getLatLng(obj7).then(res => {
+    return SgGeocode.getLatLng(obj7, keys).then(res => {
         expect(res.lat).toBe(33.43681)
         expect(res.lng).toBe(-111.943)
     })
 });
 
 test('test Prediction usStreetAPI', () => {
-    return SgGeocode.getLatLng(obj8).then(res => {
+    return SgGeocode.getLatLng(obj8, keys).then(res => {
         expect(res.lat).toBe(33.32371)
         expect(res.lng).toBe(-111.83018)
     })
 });
 
 test('test googleapi', () => {
-    return SgGeocode.getLatLng(obj9).then(res => {
+    return SgGeocode.getLatLng(obj9, keys).then(res => {
         expect(res.lat).toBe(33.248528)
         expect(res.lng).toBe(-111.8381307)
     })
@@ -194,12 +192,12 @@ test('test googleapi', () => {
 
 test('test incorrect object', () => {
     expect(() => {
-        SgGeocode.getLatLng(obj10);
+        SgGeocode.getLatLng(obj10, keys);
     }).toThrow('Object not defined correctly');
 })
 
-test.only('test google zero result', () => {
-    return SgGeocode.getLatLng(obj11).then(res => {
+test('test google zero result', () => {
+    return SgGeocode.getLatLng(obj11, keys).then(res => {
         expect(res.status).toBe('ZERO_RESULTS');
     })
 });

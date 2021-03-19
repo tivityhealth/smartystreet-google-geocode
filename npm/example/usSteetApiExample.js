@@ -1,12 +1,17 @@
 const {SgGeocode} = require('sgGeocode');
 
-//create address object with complete address (fullAddress)
-let options = {
-    fullAddress: '123 W Chandler Blvd Chandler AZ',
-    webKey: 'your key'
+//declare your keys
+let keys = {
+    webKey: 'your key here',
+    googleApiKey: 'your google api key here'
 }
 
-SgGeocode.getLatLng(options).then((res) => {
+//create address object with complete address (fullAddress)
+let options1 = {
+    fullAddress: '123 W Chandler Blvd Chandler AZ',
+}
+
+SgGeocode.getLatLng(options1, keys).then((res) => {
     console.log(res)
 });
 
@@ -15,11 +20,11 @@ SgGeocode.getLatLng(options).then((res) => {
  * When smartystreet fails to return lat long, the call is redirected to google geocoder
  * eg: 1448 S Spectrum Blvd Chandler AZ
 */
-let options = {
+let options2 = {
     fullAddress: '1448 S Spectrum Blvd Chandler AZ',
     webKey: 'your key'
 }
 
-SgGeocode.getLatLng(options).then((res) => {
+SgGeocode.getLatLng(options2, keys).then((res) => {
     console.log(res)
 })

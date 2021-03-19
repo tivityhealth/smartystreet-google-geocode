@@ -10,33 +10,36 @@ npm install sggeocode
 ```jsx
 const {SgGeocode} = require('sgGeocode');
 
-let options = {
-    fullAddress: '123 W Chandler Blvd Chandler AZ',
+let keys = {
     webKey: 'your key here',
     googleApiKey: 'your google api key here'
 }
 
-SgGeocode.getLatLng(options).then((res) => {
+let options = {
+    fullAddress: '123 W Chandler Blvd Chandler AZ',
+}
+
+SgGeocode.getLatLng(options, keys).then((res) => {
     console.log(res)
 });
 ```
 
-## Options
+## Parameter
+You pass in the following parameters in the keys object
+- _webKey_ - _SmartyStreets web key_
+- _googleApiKey_ - _Google Places API key_
+
 You can pass in the following parameters in the options object
 - _fullAddress_ - _Complete Address_
 - _zipcode_ - _5 digit zip code_
 - _city_ - _City name_
 - _state_ - _State code_
-- _webKey_ - _SmartyStreets web key_
-- _googleApiKey_ - _Google Places API key_
 
 The Lookup object can be constructed in 3 different ways
 1. Lookup by Address (fullAddress)
 ```jsx
 let options = {
-    fullAddress: '123 W Chandler Blvd Chandler AZ',
-    webKey: 'your key here',
-    googleApiKey: 'your google api key here'
+    fullAddress: '123 W Chandler Blvd Chandler AZ'
 }
 ```
 
@@ -44,8 +47,7 @@ let options = {
 (Google API key is optional when constructing zip object) 
 ```jsx
 let options = {
-    zipcode: '12345',
-    webKey: 'your key here',
+    zipcode: '12345'
 }
 
 //OR a combination of City-State
@@ -53,7 +55,6 @@ let options = {
 let options = {
     city: 'Chandler',
     state: 'AZ'
-    webKey: 'your key here',
 }
 
 //OR all three of them
@@ -61,7 +62,6 @@ let options = {
     zipcode: '12345'
     city: 'Chandler',
     state: 'AZ'
-    webKey: 'your key here',
 }
 ```
 
@@ -96,9 +96,7 @@ let options = {
            }
         ],
         "types" : [ "postal_code", "geocode" ]
-     },
-     webKey: 'your key here',
-     googleApiKey: 'your google api key here' 
+     }
 }
 ```
 
