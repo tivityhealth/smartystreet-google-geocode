@@ -1,6 +1,10 @@
 const axios = require("axios");
 
 const handleResult = (res) => {
+	if(res.data.status === 'ZERO_RESULTS' || res.data.results.length === 0){
+        //when Google returns zero results         
+        return {status: res.data.status};
+    }
 	let result = {
 		lat: res.data.results[0].geometry.location.lat,
 		lng: res.data.results[0].geometry.location.lng

@@ -120,6 +120,12 @@ let obj10 = {
     key: '123'
 }
 
+let obj11 = {
+    fullAddress: 'sdflkjsdfablsdkfjsdfdsfl',
+    webKey: SmartyStreetsKey,
+    googleApiKey: GoogleApiKey,
+}
+
 test('test usStreetAPI', () => {
     return SgGeocode.getLatLng(obj1).then(res => {
         expect(res.lat).toBe(33.32371)
@@ -191,3 +197,9 @@ test('test incorrect object', () => {
         SgGeocode.getLatLng(obj10);
     }).toThrow('Object not defined correctly');
 })
+
+test.only('test google zero result', () => {
+    return SgGeocode.getLatLng(obj11).then(res => {
+        expect(res.status).toBe('ZERO_RESULTS');
+    })
+});
