@@ -7,7 +7,7 @@ const isOptionsNull = (options) => {
   return false;
 }
 
-const usePrediction = (options) => {
+const usePrediction = (options, keys) => {
   let zipKeyWords = ["postal_code", "locality"];
 
   //Check if autocomplete object is zipcode compatible  
@@ -16,7 +16,7 @@ const usePrediction = (options) => {
       city: '',
       state: '',
       zipcode: '',
-      webKey: options.webKey
+      webKey: keys.webKey
     };
     let termsLength = options.prediction.terms.length - 1;
 
@@ -35,8 +35,8 @@ const usePrediction = (options) => {
   else {
     let streetData = {
       fullAddress: options.prediction.description,
-      webKey: options.webKey,
-      googleApiKey: options.googleApiKey,
+      webKey: keys.webKey,
+      googleApiKey: keys.googleApiKey,
     }
 
     return callUSStreetApi(streetData)
@@ -44,7 +44,7 @@ const usePrediction = (options) => {
 }
 
 class SgGeocode{
-  static getLatLng(options) {
+  static getLatLng(options, keys) {
     if(isOptionsNull(options)){
       throw new Error("Object not defined correctly");
     }
@@ -54,19 +54,24 @@ class SgGeocode{
         city: options.city,
         state: options.state,
         zipcode: options.zipcode,
-        webKey: options.webKey
+        webKey: keys.webKey
       };
       return callZipApi(zipData)
           .then(({result}) => result)
     }
     //When the user passes complete/partial Address
     else if (options.fullAddress) {
-        return callUSStreetApi(options)
+        let streetData = {
+          fullAddress : options.fullAddress,
+          webKey : keys.webKey,
+          googleApiKey : keys.googleApiKey
+        }
+        return callUSStreetApi(streetData)
           .then(({result}) =>  result )
     }
     //When the user passes Google autocomplete object as input
     else if (options.prediction) {
-       return usePrediction(options)
+       return usePrediction(options, keys)
           .then(({result}) =>  result )
     }
   };

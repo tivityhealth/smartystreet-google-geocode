@@ -19,7 +19,6 @@ const handleResponse = async (res, googleApiKey) => {
 };
 
 const handleError = (res) => {
-    console.log(123)
     throw new Error(res.error.message)
   }
 
