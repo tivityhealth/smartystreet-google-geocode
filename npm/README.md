@@ -111,6 +111,13 @@ let options = {
 }
 ```
 
+- When no results are found, response object should look like this
+```jsx
+{
+    status: 'ZERO_RESULTS'
+}
+```
+
 - Unsuccessful calls should receive a response object as,
 ```jsx
 {
