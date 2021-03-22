@@ -22,7 +22,7 @@ namespace SmartyStreetsGoogleGeocode
 
                 if (obj.status != "OK")
                 {
-                    throw new ApplicationException("Could not get geocoding information from Google");
+                    throw new ApplicationException(obj.error_message.ToString());
                 }
 
                 geoPoint.Latitude = obj.results[0].geometry.location.lat;
