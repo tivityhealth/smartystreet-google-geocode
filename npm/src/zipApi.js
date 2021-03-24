@@ -8,10 +8,7 @@ const handleResponse = (res) => {
     let lng = res.lookups[0].result[0].zipcodes[0].longitude;
   
     result = { lat, lng }
-  }
-
-  console.log(result);
-  
+  }  
   return { result };
 };
 
