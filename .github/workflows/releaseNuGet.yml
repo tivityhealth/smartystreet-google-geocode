@@ -16,10 +16,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "3.1.x"
-      - name: Clean Solution
-        run: |
-          cd nuget/SmartyStreetsGoogleGeocode
-          dotnet clean
       - name: Build solution
         run: |
           cd nuget/SmartyStreetsGoogleGeocode
